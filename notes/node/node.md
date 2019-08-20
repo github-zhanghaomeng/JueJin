@@ -270,3 +270,56 @@ generator 是一个生成器  调用这个生成器的话会形成一个迭代�
 		console.log(it.next(9))  //{ value: 2, done: false }
 		console.log(it.next(10))  //{ value: 3, done: false }
 		console.log(it.next(11))  //{ value: undefined, done: true }
+------------------------------------------读取文件----------------------------------------
+
+	let fs = require('fs').promises
+	function * read(){
+	 	let content = yield fs.readFile('./name.txt','utf8')
+	//  console.log(content)
+	 	let data = yield fs.readFile(content,'utf8')
+	}
+
+	let it = read()
+	// console.log(it.next())
+		it.next().value.then(data=>{
+	  // console.log(data)   //age.txt
+	  // console.log(it.next(data))
+		it.next(data).value.then(data=>{
+			console.log(data)   //6666
+	  })
+	})
+--------------------------------用generator+co-------------------------
+
+	
+	let co = require('co')
+	co(read()).then(data=>{
+	  console.log(data)
+	})
+
+
+	const fs = require("fs").promises;
+	function * read(){
+		let concent = yield fs.readFile("./name.txt","utf-8")
+		let age = yield fs.readFile(concent,"utf-8")
+		return age
+	}
+	let co = require("co")
+	co(read()).then(data=>{
+		console.log(data)  // 666
+	})
+# async await
+解决异步的最好用的
+
+	const fs = require('fs').promises
+	async function  read(){
+  		let content = await fs.readFile('./name.txt','utf8')
+  		let data = await fs.readFile(content,'utf8')
+  		return data
+
+	}
+
+	let it = read()
+	it.then(data=>{
+	  console.log(data)
+
+	})
