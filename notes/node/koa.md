@@ -274,6 +274,7 @@ app.use(views(path.join(__dirname,'/views'),{
     // console.log(path.join(__dirname,'/views'))
     app.use(views(path.join(__dirname,'/views'),{
         extension:'ejs'
+        //这里使用ejs 需要安装npm i ejs
     }))
     app.use(async (ctx,next)=>{
         await ctx.render("index",{title:"Koa"})
