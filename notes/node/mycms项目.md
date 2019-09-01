@@ -140,6 +140,9 @@
 
 ![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/1567301053971.png)
 
+##### 编辑分类页面
+
+
 时间不对
 
 ![enter description here](https://markdown.xiaoshujiang.com/img/spinner.gif "[[[1567252107287]]]" )
@@ -151,7 +154,7 @@ const sd = require('silly-datetime')
 
 ##### 设置删除方法
 删除按钮
-![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/1567257220831.png)
+![enter description here](https://www.github.com/gi![X_5BVD3N%5S}_0XEERMC_U0](undefined)thub-zhanghaomeng/JueJin/raw/master/images/1567257220831.png)
 
 ![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/1567257125137.png)
 
@@ -175,3 +178,47 @@ const sd = require('silly-datetime')
 
 ![enter description here](https://markdown.xiaoshujiang.com/img/spinner.gif "[[[1567261313991]]]" )
 
+# 上传图片时
+上传文件 koa-multer
+在哪里使用 就在那里引入
+const multer = require('koa-multer')
+
+    // 上传文件的相关配置
+    var storage = multer.diskStorage({
+        //文件保存路径
+        destination: function (req, file, cb) {
+            cb(null, 'public/uploads/')  // 上传的文件 保存在什么地方
+        },
+        //修改文件名称
+        filename: function (req, file, cb) {
+            var fileFormat = (file.originalname).split(".");  //以点分割成数组，数组的最后一项就是后缀名
+            cb(null, Date.now() + "." + fileFormat[fileFormat.length - 1]);
+        }
+    })
+    //加载配置
+    var upload = multer({ storage: storage });
+
+接受数据时
+
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/上传图片1.png)
+
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/上传图片2.png)
+在前端form表单里
+
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/上传图片3.png)
+
+# 富文本编译器
+1.	安装 npm I koa-ueditor
+2.	引入 因为后面还需要富文本编译器 所以在admin.js中进行引入，并进行配置
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/富文本编译器1.png)
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/富文本编译器2.png)
+3.把老师仓库里的ueditor文件夹复制过来，放在public
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/富文本编译器3.png)
+4.把ueditor.config.js中进行修改
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/富文本编译器4.png)
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/富文本编译器5.png)
+5在前端中进行使用ueditor 并实例化富文本编译器
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/富文本编译器6.png)
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/富文本编译器7.png)
+6.引入富文本编译器相关的js
+![enter description here](https://www.github.com/github-zhanghaomeng/JueJin/raw/master/images/富文本编译器8.png)
