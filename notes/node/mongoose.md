@@ -77,3 +77,11 @@ update updateOne updateMany
         console.log(data)  //{n:1,ok:1,deleteCount:1}代表更新成功
     })
     
+# 上面的回调函数 也可以直接在后面.then  .catch
+例如 查找时
+
+    User.find({}).then(data=>{
+        cosnole.log(data) //打印找到的数据
+    }).catch(err=>{
+        console.log(err)
+    })
