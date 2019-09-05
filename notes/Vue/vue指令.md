@@ -110,3 +110,73 @@ v-for
 
     <p :style="myStyle">这是一个p标签</p>
     data:{myStyle:{color:'red',backgroundColor:'skyblue'}}
+## v-on
+##### 绑定事件
+
+    <button v-on='f1'>点击</button>
+    methods:{f1(){...}}
+
+##### 事件处理函数
+    (1)放在标签中  <button v-on='isShow = !isShow'>点击</button>
+    (2)放在methods中 <button v-on='f1'>点击</button>
+       (1)传参  传的参数是变量 v-for='(value,index) in attr' v-on='f1(value)'
+       (2)      传的参数是字面量 v-on='f1("hello")'
+##### 事件对象 $event
+当事件发生时  事件对象中存储了很多信息   如这个事件的类型 click  点击坐标
+
+##### 默认事件
+a标签 和 form表单 都有默认事件
+
+    <a href='http://www.baidu.com' @click='f1'>百度</a>
+    methods:{
+        f1(){alert('hello')} //当点击百度时  会弹hello 之后会跳转到百度的页面
+    }
+阻止事件
+
+    <a href='http://www.baidu.com' @click='f1($event)'>百度</a>
+        methods:{
+            f1(abc){
+                abc.preventDefault()
+            }
+        } 
+    }
+    
+##### 阻止冒泡
+div包含了好多的小div  当点击小的div时  大的div的事件也会发生  从里往外
+在子元素的方法上 传入一个事件对象 利用事件对象进行阻止冒泡
+
+    <div @click='f1'>
+        <div @click='f2($event)'>
+         </div>
+    </div>
+    f2(abc){
+        abc.stopPropagation()
+    }
+##### 事件修饰符
+    
+    <a href='javascript(0)'></a>
+    vue中的写法  <a href='' @click.prevent='f1'></a> //这时只会调用f1方法 href为空时会刷新 不会‘刷新’
+    
+常见修饰符
+可以执行多个修饰符   @click.stop.once.  
+    prevent 阻止默认事件
+    stop    阻止冒泡  默认为从里到外
+    capture 从外往里 
+    self   把self放在谁身上  谁就不会发生
+    once  只触发一次  不管点击多少次 只会发生一次
+##### 把冒泡变成捕获  从外到里
+
+    <div @click.capture='f1'>
+        <div @click.capture='f2'>
+         </div>
+    </div>
+##### 按键修饰符 
+keycode
+    
+    <input type='text' @keyup='f($event)' /> // @keyup.13='f'  @keyup.enter='f'
+    methods:{
+        f(e){
+            if(e.keycode == 13){}
+        }    
+    }
+    
