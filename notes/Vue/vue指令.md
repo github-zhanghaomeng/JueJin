@@ -173,7 +173,7 @@ div包含了好多的小div  当点击小的div时  大的div的事件也会发�
 ##### 按键修饰符 
 keycode
     
-    <input type='text' @keyup='f($event)' /> // @keyup.13='f'  @keyup.enter='f'
+    <input type='text' @keyup='f($event)' /> // @keyup.13='f'  @keyup.enter='f' @keyup.enter.right='f'
     methods:{
         f(e){
             if(e.keycode == 13){}
