@@ -66,7 +66,7 @@ v-if v-else 之间不可以有其他的标签
 v-if v-else-if v-else-if v-else
 
 ## 循环指令
-v-for
+v-for  单标签不能使用v-for 例如input
 可以遍历数组 第一个参数是值 第二个值是索引 第三个参数没有值
 
     <p v-for='(value,index) in link'>
