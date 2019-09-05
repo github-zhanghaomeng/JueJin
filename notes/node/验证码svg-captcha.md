@@ -142,3 +142,6 @@ express和koa就是一个是req一个是ctx
             })
         }
     })
+
+使用postman进行测试时，输入http://localhost:3000/api/code会生成一个验证码,并且生成了一个cookie.sid
+使用另一个窗口输入http://localhost:3000/api/admin/login时 输入验证码 密码 邮箱 并且还需要带上刚才生成的cookie.sid
