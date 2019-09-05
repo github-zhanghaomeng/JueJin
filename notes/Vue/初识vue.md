@@ -1,6 +1,11 @@
 # vue
 是构建用户界面的渐进式框架
 ##### 特点：好用 灵活 高效
+指令系统
+组件化
+模块化
+工程化
+
 ##### 使用
 （1） 
 
@@ -18,6 +23,7 @@ vue es6 vue-router vuex webpack
         {{msg}}
     </div>
     var app = new Vue({
+    //里面都是vue的配置项
         el:'#app', //管理的边界 和上面div中的id一致
         data:{
             msg:'hello'
@@ -27,5 +33,9 @@ vue es6 vue-router vuex webpack
         },
         computed:{
         
-        }
+        },
+        components:{
+        
+        },
+        钩子函数...
     })
