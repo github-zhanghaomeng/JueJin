@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>聚财猫</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .w1000 {
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        h2 {
+            font-weight: normal;
+        }
+        .mr200{
+            margin-right: 200px;
+        }
+        .mr35{
+            margin-right: 35px;
+        }
+
+        /* top */
+        .top {
+            height: 29px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .top li {
+            float: left;
+            color: #666;
+        }
+
+        .icon-top1,
+        .icon-top2,
+        .icon-top3,
+        .icon-top4,
+        .icon-top5,
+        .icon-top6 {
+            width: 20px;
+            height: 20px;
+            background: url(./jcm/index-sp1.png) no-repeat;
+            display: inline-block;
+            position: relative;
+            top: 4px;
+            margin-right: 10px;
+        }
+
+        .top a:hover {
+            color: #cc3333;
+        }
+
+        .icon-top1 {
+            background-position: -6px -4px;
+            margin-right: 4px;
+
+        }
+
+        .icon-top2 {
+            background-position: -6px -31px;
+        }
+
+        .icon-top3 {
+            background-position: -6px -59px;
+        }
+
+        .icon-top4 {
+            background-position: -6px -89px;
+        }
+
+        .icon-top5 {
+            background-position: -6px -118px;
+        }
+
+        .icon-top6 {
+            background-position: -45px -6px;
+            margin-right: 4px;
+        }
+
+        /* top end */
+
+        /* logo */
+        .logo {
+            height: 100px;
+            line-height: 100px;
+        }
+
+        .logo a {
+            margin-right: 40px;
+        }
+
+        .logo img {
+            position: relative;
+            top: 8px;
+        }
+
+        /* logo end */
+
+        /* main */
+        .main {
+            height: 504px;
+            background-color: #eee;
+            padding-top: 35px;
+            padding-bottom: 50px;
+            color: #666;
+        }
+
+        .mainf {
+            width: 950px;
+            background-color: #fff;
+            height: 425px;
+            padding: 15px 25px 60px;
+            border-radius: 10px;
+        }
+
+        .mainf h2 {
+            font-size: 24px;
+            border-bottom: 1px solid #e4e4e4;
+            padding-bottom: 15px;
+
+        }
+
+        .mainf label {
+            margin-right: 20px
+        }
+
+        .iphone {
+            width: 220px;
+            height: 35px;
+            border: 1px solid #ccc;
+            background: url(./jcm/login-sp.png) no-repeat;
+            padding-left: 30px;
+            background-position: 7px 7px;
+
+        }
+
+        .picture {
+            width: 100px;
+            height: 35px;
+            background: url(./jcm/login-sp.png) no-repeat;
+            padding-left: 28px;
+            background-position: 4px -73px;
+            position: relative;
+            left: -14px;
+            border: 1px solid #ccc;
+
+        }
+
+        .pic {
+            position: relative;
+            left: -14px;
+        }
+
+        .mainf .fr img {
+            position: relative;
+            top: 12px;
+            left: -9px;
+        }
+
+        .main p {
+            /* border: 1px solid red; */
+            padding-left: 112px;
+            padding-top: 12px;
+            background: url(./jcm/login-sp.png) no-repeat;
+            background-position: 90px -222px;
+        }
+        button{
+            width: 249px;
+            height: 38px;
+            background-color: #ff6666;
+            color: #fff;
+            border-radius: 10px;
+            position: relative;
+            top: 8px;
+            left: 90px;
+            font-size: 20px;
+        }
+        .main a{
+            color:#cc3333;
+        }
+        .mainf .fr span{
+            position: relative;
+            top: 14px;
+            left: 92px;
+        }
+        /* main end */
+
+        /* footer */
+        .footer{
+            background-color: #e2e2e2;
+            height: 321px;
+            color: #666;
+            font-size: 14px;
+        }
+        .footer li{float: left;margin-top: 46px;}
+        .footer p{
+            margin-bottom: 26px;
+        }
+        .icon-footer1,.icon-footer2,.icon-foot1,.icon-foot2,.icon-foot3,.icon-foot4{
+            width: 88px;
+            height: 25px;
+            display: block;
+            background: url(./jcm/index-sp1.png) no-repeat;
+
+        }
+        .icon-footer1{
+            background-position: 0 -214px;
+            margin-bottom: 12px;
+        }
+        .icon-footer2{
+            background-position: 0 -286px;
+        }
+        .icon-footer3{
+            width: 126px;
+            height: 126px;
+            display: block;
+            background: url(./jcm/thumb_11469.png) no-repeat;
+        }
+    
+        .icon-foot1{
+            background-position: 0 -329px;
+            margin-left: 246px;
+        }
+        .icon-foot2{
+            background-position: 0 -373px;
+        }
+        .icon-foot3{
+            background-position: 0 -421px;
+        }
+        .icon-foot4{
+            background-position: 0 -456px;
+        }
+        .foot a{
+            margin-right: 60px;
+            float: left;
+        }
+     
+        /* footer end */
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- top -->
+        <div class="top">
+            <ul class="w1000">
+                <li><i class="icon-top1"></i><span style="margin-right: 10px">客服热线：400-050-1889（8:30-21:30）</span></li>
+                <li class="icon-top2"></li>
+                <li class="icon-top3"></li>
+                <li class="icon-top4"></li>
+                <li class="icon-top5"></li>
+                <li style="float:right;">
+                    <i class="icon-top6"></i>
+                    <a href="">立即登录</a>
+                    <a href="">免费注册</a>
+                    <a href="" style="margin-right: 12px;">下载客户端</a>
+                </li>
+            </ul>
+        </div>
+        <!-- top end -->
+
+        <!-- logo -->
+        <div class="logo">
+            <ul class="w1000">
+                <li class="fl">
+                    <img src="./jcm/nav_logo.png" alt="">
+                </li>
+                <li class="fr">
+                    <a href="">首页</a>
+                    <a href="">新手指引</a>
+                    <a href="">安全保障</a>
+                    <a href="">关于我们</a>
+                </li>
+            </ul>
+        </div>
+        <!-- logo end -->
+
+        <!-- main -->
+        <div class="main">
+            <div class="mainf w1000">
+                <h2>注册</h2>
+                <div class="fl">
+                    <img src="./jcm/login_banner.jpg" alt="" style="margin-top: 25px">
+                </div>
+                <div class="fr" style="margin-top: 25px">
+                    <form action="">
+                        <label for="phone">手机号码</label>
+                        <input type="text" id="phone" name="phone" class="iphone" placeholder="请输入手机号">
+                        <br />
+                        <label for="pic" class="pic">图形验证码</label>
+                        <input type="text" id="pic" placeholder="图形验证码" class="picture">
+                        <img src="./jcm/yzm111-35.png" alt=""><br />
+                        <p>我同意<a>《聚财猫用户使用协议》</a></p>
+                        <button>获取验证码</button><br/>
+                        <span>已有账号? <a>立即登录</a></span>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- main end -->
+
+        <!-- footer -->
+        <div class="footer">
+            <ul class="w1000">
+                <li class="mr200">
+                    <p>客服邮箱 &nbsp;cs@jucaicat.com</p>
+                    <p style="margin-bottom: 0;">客服电话<span style="font-size: 20px"> 400-050-1889</span></p>
+                    <p style="margin-left: 65px">每日（8:30-21:30）</p>
+                </li>
+                <li class="mr200">
+                    <p><a href=""><span style="border-right: 1px solid #d2d2d2;padding-right: 9px;">安全保障</span><span style="padding-left: 9px">关于我们</span></a></p>
+                    <p><a href=""><span style="border-right: 1px solid #d2d2d2;padding-right: 9px;">帮助中心</span><span style="padding-left: 9px">媒体报道</span></a></p>
+                    <p style="margin-bottom: 58px"><a href=""><span style="border-right: 1px solid #d2d2d2;padding-right: 9px;">免责声明</span><span style="padding-left: 9px">数据频道</span></a></p>
+                </li>
+                <li class="mr35">
+                    <p style="margin-bottom: 10px;margin-top: 10px;">手机应用</p>
+                    <a href="" class="icon-footer1"></a>
+                    <a href="" class="icon-footer2"></a>
+                </li>
+                <li style="margin-right: 0">
+                    <a href="" class="icon-footer3"></a>
+
+                </li>
+            </ul>
+            <div class="foot w1000">
+                <a href="" class="icon-foot1"></a>
+                <a href="" class="icon-foot2"></a>
+                <a href="" class="icon-foot3"></a>
+                <a href="" class="icon-foot4"></a>
+                <p style="clear: both;text-align:center;padding-top:26px">Copyright ? 2014-2017 上海裕乾金融信息服务有限公司All Rights Reserved 　沪ICP备14035976号-1 沪ICP备16006644号-1</p>
+            </div>
+
+        </div>
+        <!-- footer end -->
+    </div>
+
+</body>
+
+</html>

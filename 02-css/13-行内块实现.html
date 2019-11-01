@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+             /* 3.去除每个div之间的间隙 */
+            font-size: 0;
+        }
+        .item{
+            width: 100px;
+            height: 200px;
+            border:1px solid red;
+            /* 1.变成一行 */
+            display: inline-block;
+            /* 2.文字默认对齐方式是基线对齐，变成定现对齐 */
+            vertical-align: top;
+            /* 4.显示框里的文字 */
+            font-size: 16px;
+           
+        }
+        
+       
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">学习css</div>
+        <div class="item">学习css学习css学习css学习css学习css</div>
+        <div class="item">学习css</div>
+    </div>
+</body>
+
+</html>

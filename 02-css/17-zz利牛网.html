@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>利牛投资</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .w960 {
+            margin-left: auto;
+            margin-right: auto;
+            width: 960px;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .mr90{margin-right: 90px;}
+        .mb33{margin-bottom: 33px;}
+
+
+        /* 顶部区域  */
+        .logo {
+            height: 72px;
+            padding-top: 36px;
+            background-color: #e65224;
+        }
+
+        .logo p,
+        .logo em {
+            color: #fff;
+
+        }
+
+        /* 顶部区域 end */
+
+        /* nav 区域 */
+        .nav {
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .nav a {
+            color: #4d4d4d;
+            margin-right: 65px;
+        }
+
+        .nav a:hover {
+            color: #e75225;
+        }
+
+        .nav .first {
+            color: #e75225;
+        }
+
+        .nav .navF {
+            padding-left: 19px;
+        }
+
+        /* nav 区域 end */
+
+        /* 三大保障 */
+        .promise {
+            padding-top: 47px;
+            height: 123px;
+        }
+
+        .promise div {
+            float: left;
+            width: 320px;
+        }
+
+        .promise img {
+            float: left;
+            margin-right: 12px;
+        }
+
+        .promise dl {
+            float: left;
+        }
+
+        .promise dl dd {
+            color: #696969;
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        /* 三大保障 end */
+
+        /* 主要业务 */
+        .main {
+            height: 455px;
+        }
+
+        .main h3 {
+            text-align: center;
+            margin-bottom: 54px;
+            color: #4b4b4b;
+        }
+
+        .main div {
+            float: left;
+            width: 225px;
+            margin-right: 20px;
+        }
+
+        .main dl dt {
+            color: #e75225;
+            margin-top: 29px;
+        }
+
+        .main dl dd {
+            font-size: 14px;
+            line-height: 2;
+            color: #9f9f9f;
+        }
+
+        .main a {
+            background-color: #4b4b4b;
+            color: #fff;
+            display: block;
+            width: 103px;
+            height: 39px;
+            line-height: 39px;
+            text-align: center;
+            margin-top: 31px;
+        }
+
+        /* 主要业务 end */
+
+        /* 关于我们 */
+        .about {
+            background-image: url("./img/about.jpg");
+            height: 193px;
+            text-align: center;
+        }
+
+        .about h3 {
+            color: #fff;
+            padding-top: 36px;
+        }
+
+        .about p {
+            color: #fff;
+            font-size: 14px;
+            width: 547px;
+            margin: 47px auto;
+        }
+
+        /* 关于我们  end*/
+
+        /* 新闻问题 */
+        .problemAndnews {
+            height: 480px;
+            margin-bottom: 51px;
+        }
+
+        .problemAndnews h3 {
+            margin-top: 62px;
+            color: #212121;
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 24px;
+        }
+
+        .problemAndnews .news ul li {
+            margin-right: 28px;
+            width: 295px;
+        }
+
+        .problemAndnews .news ul li a {
+            color: #666;
+            font-size: 14px;
+            line-height: 3.2;
+        }
+
+        .problemAndnews .news ul li a:hover {
+            color: red;
+        }
+
+        .problemAndnews .problems {
+            width: 320px;
+        }
+
+        .problemAndnews .problems .ask,
+        .problemAndnews .problems .answer {
+
+            background-repeat: no-repeat;
+            background-position: left center;
+            width: 240px;
+            line-height: 2;
+        }
+
+        .problemAndnews .problems .ask {
+            background-image: url("./img/q(1).jpg");
+
+        }
+
+        .problemAndnews .problems .answer {
+            font-size: 14px;
+            color: #666;
+            background-image: url("./img/q2.jpg");
+
+        }
+
+        .problemAndnews .problems li {
+            padding-bottom: 28px;
+            padding-top: 32px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .problemAndnews .problems p {
+
+            padding-left: 39px;
+        }
+
+        /* 新闻问题 end */
+
+        /* 合作机构 */
+        .cooperation {
+            height: 330px;
+            background-color: #f6f6f6;
+        }
+
+        .cooperation h3 {
+            padding-top: 51px;
+            padding-bottom: 48px;
+            font-weight: normal;
+            color: #666;
+            font-size: 18px;
+
+        }
+
+        .cooperation ul li {
+            float: left;
+            margin: 20px 86px 20px 0;
+        }
+
+        .cooperation ul li.last {
+            margin-right: 0;
+        }
+
+        .jsjj,
+        .hxjj,
+        .hftjj,
+        .hxjj,
+        .zyjj,
+        .hajj,
+        .jxjj,
+        .zsjj,
+        .nfjj,
+        .dfjj {
+            background: url("./img/index_sp.png") no-repeat;
+            display: block;
+            width: 121px;
+            height: 36px;
+            text-indent: -9999px;
+        }
+
+        .hxjj {
+            background-position: 0 -223px;
+        }
+
+        .hftjj {
+            background-position: 0 -283px;
+        }
+
+        .hxjj {
+            background-position: 0 -223px;
+        }
+
+        .zyjj {
+            background-position: 0 -60px;
+        }
+
+        .hajj {
+            background-position: 0 -497px;
+        }
+
+        .jxjj {
+            background-position: 0 -172px;
+        }
+
+        .zsjj {
+            background-position: 0 -117px;
+        }
+
+        .nfjj {
+            background-position: 0 -335px;
+        }
+
+        .dfjj {
+            background-position: 0 -387px;
+        }
+        /* 合作机构 end */
+
+        /* 联系我们 */
+        .contact{
+            height: 179px;
+            background-color: #2c2c2c;
+            padding-top: 56px;
+            border-bottom: 1px solid #aaa;
+        }
+        .contact dl{color: #a9a9a9;}
+        .wb,.wx,.pg,.az{
+            background: url("./img/index_sp.png") no-repeat;
+            display: block;
+            width: 40px;
+            height: 40px;
+            text-indent: -9999px;
+            float: left;
+            margin: 3px;
+            
+        }
+        .wb{background-position: -172px -7px;}
+        .wx{background-position: -230px -7px;}
+        .pg{background-position: -288px -7px;}
+        .az{background-position: -345px -7px;}
+        /* 联系我们 end */
+
+        /* 底部 */
+        .footer{height: 49px;background-color: #2c2c2c;padding-top: 18px;}
+        .footer p{width: 219px;color: #666666;font-size: 14px;text-align: center;margin: 0 auto;}
+        .footer a{color: #666666;}
+        .footer a:hover{color: #e65224;}
+        /* 底部 end */
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- logo区域 -->
+        <div class="logo">
+            <ul class="w960">
+                <li class="fl">
+                    <a href=""><img src="./img/logo.png" alt=""></a>
+                </li>
+                <li class="fr">
+                    <img src="./img/phone.png" alt="" class="fl">
+                    <div class="fl">
+                        <p>服务热线</p>
+                        <em>188888888888</em>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- logo end -->
+
+        <!-- nav 区域 -->
+        <div class="nav w960">
+            <div class="navF">
+                <a href="" class="first">首页</a>
+                <a href="">关于利牛</a>
+                <a href="">行业资讯</a>
+                <a href="">主要业务</a>
+                <a href="">安全保障</a>
+            </div>
+        </div>
+        <!-- nav end -->
+
+        <!-- 大图片区域 -->
+        <div class="bigImg w960">
+            <img src="./img/bigAdvimg.png" alt="">
+        </div>
+        <!-- 大图片区域 end -->
+
+        <!-- 三大保障区域 -->
+        <div class="promise w960">
+            <div>
+                <img src="./img/promise1.png" alt="">
+                <dl>
+                    <dt>稳定高收益</dt>
+                    <dd>40倍银行活期存款利息</dd>
+                    <dd>100元起投，交易0手续费</dd>
+                </dl>
+            </div>
+            <div>
+                <img src="./img/promise2.png" alt="">
+                <dl>
+                    <dt>安全严保障</dt>
+                    <dd>本息保障，风险审核贷</dd>
+                    <dd>后管理</dd>
+                </dl>
+            </div>
+            <div class="last">
+                <img src="./img/promise3.png" alt="">
+                <dl>
+                    <dt>便捷优服务</dt>
+                    <dd>24小时放宽，提前还款减免</dd>
+                    <dd>费用</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- 三大保障区域 end-->
+
+        <!-- 主要业务区域 -->
+        <div class="main w960">
+            <h3>主要业务<span style="color: #a7a7a7;">/ news</span></h3>
+            <div>
+                <img src="./img/001.jpg" alt="">
+                <dl>
+                    <dt>投资业务</dt>
+                    <dd>证券投资业务，指银行购买有价证券的活动。</dd>
+                </dl>
+                <a href="">立即咨询>></a>
+            </div>
+            <div>
+                <img src="./img/002.jpg" alt="">
+                <dl>
+                    <dt>产品代理</dt>
+                    <dd>通过代理的形式，推广和买卖产品，是产品的一种交易和流通方式。</dd>
+                    <a href="">立即咨询>></a>
+                </dl>
+            </div>
+            <div>
+                <img src="./img/003.jpg" alt="">
+                <dl>
+                    <dt>理财增值</dt>
+                    <dd>通过发行基金单位，集中投资者的资金，由基金管理人管理和运用资金。</dd>
+                    <a href="">立即咨询>></a>
+                </dl>
+            </div>
+            <div style="margin-right: 0">
+                <img src="./img/004.jpg" alt="">
+                <dl>
+                    <dt>信托服务</dt>
+                    <dd>信托业务建立了以项目为中心，以风险贯穿其间的业务运作平台。</dd>
+                    <a href="">立即咨询>></a>
+                </dl>
+            </div>
+        </div>
+        <!-- 主要业务区域 end -->
+
+        <!-- 关于我们区域 -->
+        <div class="about w960">
+            <div class="aboutF">
+                <h3>关于我们</h3>
+                <p>利牛金融有限公司是在1991年5月13日成立的艾宏保险公司的基础上组建而成的金融集团公司，总部设在上海，以“推动和实现可持续的价值增长”为经营理念。</p>
+            </div>
+        </div>
+        <!-- 关于我们区域 end -->
+
+        <!-- 新闻问题区域 -->
+        <div class="problemAndnews w960">
+            <div class="news fl">
+                <h3>新闻资讯<span style="color: #a7a7be;font-size: 18px;">/ NEWS</span></h3>
+                <ul>
+                    <li class="fl">
+                        <a href=""><img src="./img/news1.jpg" alt=""></a>
+                        <ul>
+                            <li><a href="">
+                                    <p>证监会：分级基金投资者门槛定为30</p><span></span>
+                                </a></li>
+                            <li><a href="">
+                                    <p>两市震荡下行 次新股板块走势较分化</p><span></span>
+                                </a></li>
+                            <li><a href="">
+                                    <p>机场民航板块起飞 上海机场涨3.31%</p><span></span>
+                                </a></li>
+                            <li><a href="">
+                                    <p>人民币汇率有条件保持基本稳定</p><span></span>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li class="fl" style="margin-right: 0;">
+                        <a href=""><img src="./img/news2.jpg" alt=""></a>
+                        <ul>
+                            <li><a href="">
+                                    <p>年关将至，4件大事发生将影响你我的生活！</p><span></span>
+                                </a></li>
+                            <li><a href="">
+                                    <p>投资理财5个地方该花的钱，你花了吗？</p><span></span>
+                                </a></li>
+                            <li><a href="">
+                                    <p>关于年终奖的这些秘密你都知道吗？</p><span></span>
+                                </a></li>
+                            <li><a href="">
+                                    <p>活用理财小公式 让财富轻松翻倍！</p><span></span>
+                                </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="problems fr">
+                <h3>常见问题<span style="color: #a7a7be;font-size: 18px;">/ NEWS</span></h3>
+                <ul>
+                    <li style="padding-top: 0;">
+                        <p class="ask">个人征信记录要注重哪些?</p>
+                        <p class="answer">个人信息:姓名、证件类型证件号码</p>
+                    </li>
+                    <li>
+                        <p class="ask">银行理财产品该怎么选?</p>
+                        <p class="answer">在各大银行都推出琳琅满目的理财产品，我们该如何做选择呢</p>
+                    </li>
+                    <li style="border-width: 0;">
+                        <p class="ask">个人消费贷款如何办理?</p>
+                        <p class="answer">个人消费贷款也叫消费者贷款，是银行以消费者信用为基础。</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 新闻问题区域 end -->
+
+        <!-- 合作机构区域 -->
+        <div class="cooperation">
+            <div class="w960">
+                <h3>合作机构</h3>
+                <ul>
+                    <li><a href="" class="jsjj">jsjj</a></li>
+                    <li><a href="" class="hxjj">jsjj</a></li>
+                    <li><a href="" class="hftjj">jsjj</a></li>
+                    <li><a href="" class="hxjj">jsjj</a></li>
+                    <li class="last"><a href="" class="zyjj">jsjj</a></li>
+                    <li><a href="" class="hajj">jsjj</a></li>
+                    <li><a href="" class="jxjj">jsjj</a></li>
+                    <li><a href="" class="zsjj">jsjj</a></li>
+                    <li><a href="" class="nfjj">jsjj</a></li>
+                    <li class="last"><a href="" class="dfjj">jsjj</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 合作机构区域 end -->
+
+        <!-- 联系我们区域 -->
+        <div class="contact">
+            <div class="w960">
+                <dl class="mr90 fl">
+                    <dt class="mb33">联系我们</dt>
+                    <dd>地址:广州市海珠区苏州街18号F栋3单元3A02</dd>
+                    <dd>邮编:510000</dd>
+                    <dd>邮件:2383003879@qq.com</dd>
+                </dl>
+                <dl class="mr90 fl">
+                    <dt>客服热线</dt>
+                    <dd style="font-size: 30px">18825039863</dd>
+                    <dd>(工作时间:9:00-21:00)</dd>
+                    <dd>
+                        <a href="" class="wb">wb</a>
+                        <a href="" class="wx">wb</a>
+                        <a href="" class="pg">wb</a>
+                        <a href="" class="az">wb</a>
+                    </dd>
+
+                </dl>
+                <dl class="mr90 fl">
+                    <dt class="mb33">商家服务</dt>
+                    <dd>商家入驻</dd>
+                    <dd>培训中心</dd>
+                    <dd>广告服务</dd>
+                    <dd>服务市场</dd>
+                </dl>
+                <dl class="fl">
+                    <dt class="mb33">帮助信息</dt>
+                    <dd>帮助中心</dd>
+                    <dd>赎回投资</dd>
+                    <dd>新手指引</dd>
+                    <dd>安全保障</dd>
+                </dl>
+            </div>
+            <!-- 联系我们区域 end -->
+
+        </div>
+        <!-- 底部区域 -->
+        <div class="footer">
+            <div class="w960">
+                <p>©2016利融金融有限公司 版权所有 本站使用<a href="">凡诚科技</a><span> 搭建</span></p>
+            </div>
+        </div>
+        <!-- 底部区域 end -->
+</body>
+</body>
+
+</html>

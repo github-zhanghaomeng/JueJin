@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>聚财猫</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .w1000 {
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1 {
+            font-weight: normal;
+            font-size: 30px;
+        }
+
+        span {
+            font-size: 14px;
+        }
+        .mr200{margin-right: 200px;}
+        .mr35{margin-right: 35px;}
+
+        /* top */
+        .top {
+            height: 29px;
+            border-bottom: 1px solid #e9e9e9;
+            line-height: 29px;
+        }
+
+        .top li {
+            float: left;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .phone,
+        .iphone {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background: url("./jcm/index-sp1.png") no-repeat;
+            vertical-align: middle;
+
+        }
+
+        .phone {
+            background-position: -3px -5px;
+        }
+
+        .iphone {
+            background-position: -46px -8px;
+        }
+
+        .wx,
+        .qq,
+        .wb,
+        .tb {
+            width: 18px;
+            height: 16px;
+            text-indent: -9999px;
+            margin-right: 5px;
+            margin-top: 7px;
+            background: url("./jcm/index-sp1.png") no-repeat;
+            /* border: 1px solid red; */
+        }
+
+        .wx {
+            background-position: -4px -34px;
+        }
+
+        .qq {
+            background-position: -46px -64px;
+        }
+
+        .wb {
+            background-position: -4px -93px;
+        }
+
+        .tb {
+            background-position: -4px -122px;
+        }
+
+        /* top end */
+
+        /* logo */
+        .logo {
+            height: 100px;
+            border: 1px solid red;
+            line-height: 100px;
+        }
+
+        .logo li img {
+            width: 123px;
+            height: 70px;
+            vertical-align: middle;
+        }
+
+        .logo a {
+            color: #666;
+            margin-right: 40px;
+            margin-top: 53px;
+        }
+
+        .logo a:hover {
+            color: #cc3333;
+
+        }
+
+        .logo .logo_f {
+            color: #cc3333;
+            border-bottom: 2px solid #c33;
+            padding-bottom: 10px;
+
+        }
+
+        .logo .logo_l {
+            margin-right: 12px;
+        }
+
+        /* logo end */
+
+        /* .bigImage */
+        .bigImage {
+            height: 360px;
+            background: url(./jcm/20170328144936PC-BANNER.jpg) center center;
+
+        }
+
+        /* .bigImage  end*/
+
+        /* data */
+        .data {
+            height: 251px;
+            background-color: #eee;
+        }
+
+        .data h1 {
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            /* border: 1px solid red; */
+            padding-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .data h1 span {
+            position: relative;
+            top: 16px;
+            padding: 0 45px;
+            background-color: #eee;
+        }
+
+        .data .w1000 div {
+            width: 310px;
+            height: 120px;
+            background-color: #fff;
+            border-radius: 10px;
+            float: left;
+            margin-right: 35px;
+            box-shadow: 1px 1px 1px #ccc;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .data p {
+            position: absolute;
+            top: 30px;
+            left: 94px;
+        }
+
+        .data .p2 {
+            position: absolute;
+            top: 60px;
+            left: 94px;
+        }
+
+        .icon-data1,
+        .icon-data2,
+        .icon-data3 {
+            background: url("./jcm/index-sp2.png") no-repeat;
+            width: 47px;
+            height: 41px;
+            /* border: 1px solid red; */
+            display: inline-block;
+            position: absolute;
+            top: 25px;
+            left: 23px;
+        }
+
+        .icon-data1 {
+            background-position: -2px -120px;
+        }
+
+        .icon-data2 {
+            background-position: -122px -120px;
+        }
+
+        .icon-data3 {
+            background-position: -242px -120px;
+        }
+
+        /* data end */
+
+        /* .protect */
+        .protect {
+            background-color: #eee;
+            height: 380px;
+        }
+
+        .protect h1 {
+            border-bottom: 1px solid #ccc;
+            padding-top: 68px;
+            text-align: center;
+        }
+
+        .protect h1 span {
+            padding: 0 150px;
+            background-color: #eee;
+            /* border: 1px solid red; */
+            position: relative;
+            top: 17px;
+        }
+
+        .protect ul {
+            width: 1000px;
+            height: 160px;
+            background-color: #fff;
+            margin-top: 65px;
+            position: relative;
+            border-radius: 10px;
+            margin-bottom: 60px;
+        }
+
+        .protect ul li {
+            float: left;
+            width: 286px;
+            margin-right: 39px;
+            /* border: 1px solid red; */
+
+        }
+
+        .icon-protect1,
+        .icon-protect2,
+        .icon-protect3 {
+            background: url("./jcm/index-sp2.png") no-repeat;
+            width: 96px;
+            height: 96px;
+            display: inline-block;
+            float: left;
+            margin-top: 32px;
+        }
+
+        .icon-protect1 {
+            background-position: -2px -321px;
+
+        }
+
+        .icon-protect2 {
+            background-position: -122px -321px;
+
+        }
+
+        .icon-protect3 {
+            background-position: -242px -321px;
+
+        }
+
+        dl {
+            float: left;
+            width: 172px;
+            padding-top: 40px;
+            padding-left: 14px;
+        }
+
+        dt {
+            font-size: 24px;
+            color: #494949;
+            padding-bottom: 18px;
+        }
+
+        dd {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* .protect end */
+
+        /* download */
+        .download {
+            height: 475px;
+
+        }
+
+        .download h1 {
+            font-size: 32px;
+            /* border: 1px solid red; */
+            padding-top: 60px;
+        }
+
+        .download li {
+            float: left;
+        }
+
+        .download ul {
+            padding-top: 45px;
+        }
+
+        .download img {
+            width: 154px;
+            height: 151px;
+        }
+
+        .download .first {
+            margin-left: 140px;
+            margin-right: 87px;
+        }
+
+        .download li p {
+            /* border: 1px solid red; */
+            font-size: 14px;
+            margin-top: 13px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .download p {
+            clear: both;
+            color: #666;
+
+        }
+
+        .download .w1000 {
+            height: 475px;
+            background: url("./jcm/index_bg.png") no-repeat right bottom;
+        }
+
+        /* download end */
+
+        /* about */
+        .about {
+            padding: 50px 0;
+            background-color: #eee;
+            font-size: 14px;
+        }
+
+        .about1 {
+            background-color: #fff;
+            height: px;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .about h1 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 22px;
+        }
+
+        .about ul {
+            /* border: 1px solid red; */
+            width: 430px;
+            margin-right: 40px;
+            margin-top: 23px;
+            height: 169px;
+        }
+
+        .about li {
+            line-height: 2;
+        }
+
+        .about li a {
+            width: 276px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            float: left;
+            color: #666;
+            margin-right: 63px;
+            font-size: 16px;
+
+            /* border: 1px solid red; */
+        }
+
+        .about li a:hover {
+            color: #c33;
+        }
+
+        /* .about li i{
+            float:left;
+            width:6px;
+            height:6px;
+            background-color:#c66;
+            border-radius:3px;
+            margin-top:13px; 
+        } */
+        .about span {
+            float: right;
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .about .honor li{
+            float: left;
+            width: 25%;
+            text-align:center;
+        }
+        .about .honor li img{height: 132px;}
+        /* about end*/
+
+        /* footer */
+        .contact{
+            height: 270px;
+            background: #e2e2e2;
+            padding-top: 50px;
+            color: #666;
+            font-size: 14px;
+        }
+        .contact li{float: left;}
+        .contact a{color: #666;font-size: 14px;}
+        .contact .mr200 p{margin-bottom: 25px;}
+        .icon-contact1,.icon-contact2,.icon-contact3,.icon-contact4,.icon-contact5,.icon-contact6{
+            width: 88px;
+            height: 25px;
+            display: block;
+            background: url(./jcm/index-sp1.png) no-repeat;
+        }
+        .icon-contact1{
+            background-position: 0 -211px;
+            margin-bottom: 10px;
+        }
+        .icon-contact2{
+            background-position: 0 -284px;
+        }
+        .icon-contact3{
+            background-position: 0 -331px;
+            margin-left: 246px;
+        } 
+        .icon-contact4{
+            background-position: 0 -373px;
+        } 
+        .icon-contact5{
+            background-position: 0 -423px;
+        } 
+        .icon-contact6{
+            background-position: 0 -459px;
+        }
+        .footer a{
+            float: left;
+            margin-right: 60px;
+        }
+        .footer p{
+            clear: both;
+            /* border: 1px solid red; */
+            padding-top: 28px;
+            text-align: center;
+        }
+
+
+    
+        /* footer end */
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 头部 -->
+        <div class="top">
+            <ul class="w1000">
+                <li>
+                    <i class="phone"></i>
+                    <span>客服热线：400-050-1889 （8:00-21:00）</span>
+                </li>
+                <li class="wx">wx</li>
+                <li class="qq">qq</li>
+                <li class="wb">wb</li>
+                <li class="tb">tb</li>
+                <li style="float: right">
+                    <i class="iphone"></i>
+                    <span>下载客户端|免费注册|立即登录</span>
+                </li>
+            </ul>
+        </div>
+        <!-- 头部 end-->
+
+        <!-- logo -->
+        <div class="logo">
+            <ul class="w1000">
+                <li class="fl">
+                    <img src="./jcm/nav_logo.png" alt="">
+                </li>
+                <li class="fr">
+                    <a href="" class="logo_f">首页</a>
+                    <a href="">新手指引</a>
+                    <a href="">安全保障</a>
+                    <a href="" class="logo_l">关于我们</a>
+
+                </li>
+            </ul>
+        </div>
+        <!-- logo end-->
+
+        <!-- bigImage -->
+        <div class="bigImage">
+
+        </div>
+        <!-- bigImage end -->
+
+        <!-- data -->
+        <div class="data">
+            <div class="w1000">
+                <h1><span>聚财猫平台数据</span></h1>
+                <div>
+                    <i class="icon-data1"></i>
+                    <p>注册用户数</p>
+                    <p class="p2">3,894,158</p>
+
+                </div>
+                <div>
+                    <i class="icon-data2"></i>
+                    <p>累计投资金额</p>
+                    <p class="p2">32,564,160,535</p>
+
+                </div>
+                <div style="margin-right: 0;">
+                    <i class="icon-data3"></i>
+                    <p>为用户带来收益</p>
+                    <p class="p2">633,590,005</p>
+
+                </div>
+            </div>
+        </div>
+        <!-- data end -->
+
+        <!-- protect -->
+        <div class="protect">
+            <div class="w1000">
+                <h1><span>五重安全保障全面保护账户安全</span></h1>
+                <ul>
+                    <li style="margin-left: 32px;">
+                        <i class="icon-protect1"></i>
+                        <dl>
+                            <dt>风险准备金</dt>
+                            <dd>银行专户保管,专款专用银行</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <i class="icon-protect2"></i>
+                        <dl>
+                            <dt>严格风控体系</dt>
+                            <dd>严格的贷前审查流程与准入机制，严密的风控体系</dd>
+                        </dl>
+                    </li>
+                    <li style="margin-right: 32px;">
+                        <i class="icon-protect3"></i>
+                        <dl>
+                            <dt>低投资门槛</dt>
+                            <dd>最低100元起投人人都能参与的投资平台</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- protect end -->
+
+        <!-- download -->
+        <div class="download">
+            <div class="w1000">
+                <div style="width: 630px;">
+                    <h1>聚财猫</h1>
+                    <ul>
+                        <li class="first">
+                            <img src="./jcm/code1.png" alt="">
+                            <p>IOS&安卓均可扫码下载</p>
+                        </li>
+                        <li>
+                            <img src="./jcm/code2.png" alt="">
+                            <p>微信关注</p>
+                        </li>
+                    </ul>
+                    <p style="line-height: 24px;">下载聚财猫App一秒急速投资,随时随地赚钱、查收益，更有多重保障保障您的账户资金安全，让您享受方便、快捷、安全的理财新方式。</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- download end -->
+
+        <!-- about -->
+        <div class="about">
+            <div class="w1000 about1">
+                <h1>关于聚财猫</h1>
+                <p style="font-size: 20px;">媒体报道<span>更多>></span></p>
+                <div class="fl">
+                    <ul>
+                        <li><i></i><span>2017-03-31</span><a href="">【经济观察报】聚财猫获春晓天泽1亿A轮融资</a></li>
+                        <li><i></i><span>2017-03-29</span><a href="">【理财之家】聚财猫获春晓天泽1亿A轮融资 完成银行存管协议签署</a></li>
+                        <li><i></i><span>2017-03-30</span><a href="">【三声道】聚财猫成功A轮融资 创始人薛亮这样说</a></li>
+                        <li><i></i><span>2017-03-30</span><a href="">【21世纪经济报道】互金监管趋严难改创投热情，聚财猫获春晓天泽1亿A轮融资</a></li>
+                        <li><i></i><span>2017-03-29</span><a href="">【蓝鲸财经】聚财猫获春晓资本1亿A轮融资 完成银行存管协议签署</a></li>
+                    </ul>
+                    <li></li>
+                </div>
+                <div class="fr">
+                    <ul>
+                        <li><i></i><a href="">【上海金融报】聚财猫创始人及CEO薛亮:　大数据风控及金融科技是互金未来</a><span>2017-03-31</span></li>
+                        <li><i></i><a href="">【21世纪商业评论】聚财猫获春晓天泽1亿A轮融资 完成银行存管协议签署</a><span>2017-03-30</span></li>
+                        <li><i></i><a href="">【经济参考网】互金平台聚财猫获1亿元A轮融资</a><span>2017-03-30</span></li>
+                        <li><i></i><a href="">【时代周报】聚财猫获春晓天泽1亿A轮融资 完成银行存管协议签署</a><span>2017-03-30</span></li>
+                        <li><i></i><a href="">【东方网】聚财猫获春晓天泽1亿A轮融资 完成银行存管协议签署</a><span>2017-03-29</span></li>
+                    </ul>
+                    <li></li>
+                </div>
+                <p style="font-size: 20px;clear:both;margin-top: 20px;margin-bottom: 22px">资质荣誉<span>更多>></span></p>
+                <ul class="honor" style="width: 1000px ">
+                    <li>
+                        <img src="./jcm/ry1.jpg" alt="">
+                        <p>上海互联网金融行业协会</p>
+                    </li>
+                    <li>
+                        <img src="./jcm/ry2.jpg" alt="">
+                        <p>中国互联网诚信示范企业</p>
+                    </li>
+                    <li>
+                        <img src="./jcm/ry3.jpg" alt="">
+                        <p>金鼎奖</p>
+                    </li>
+                    <li>
+                        <img src="./jcm/ry4.jpg" alt="">
+                        <p>中国金融管理协会</p>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+        <!-- about end -->
+
+        <!-- contact -->
+        <div class="contact">
+            <ul class="w1000">
+                <li class="mr200">
+                    <p>客服邮箱 cs@jucaicat.com</p>
+                    <p style="margin-bottom: 0;">客服电话 <span style="font-size: 20px">400-050-1889</span></p>
+                    <p style="margin-bottom: 0;margin-left:65px;">每日（8:30-21:30）</p>
+                </li>
+                <li class="mr200">
+                    <p><a href=""><span style="border-right:1px solid #d2d2d2;padding-right: 9px">安全保障</span><span style="padding-left: 9px">关于我们</span></a></p>
+                    <p><a href=""><span style="border-right:1px solid #d2d2d2;padding-right: 9px">帮助中心</span></span><span style="padding-left: 9px"></span>媒体报道</a></p>
+                    <p style="margin-bottom: 50px"><a href=""><span style="border-right:1px solid #d2d2d2;padding-right: 9px">免责声明</span></span><span style="padding-left: 9px">数据频道</span></a></p>
+                </li>
+                <li class="mr35">
+                    <p>手机应用</p>
+                    <a href="" class="icon-contact1"></a>
+                    <a href="" class="icon-contact2"></a>
+                </li>
+                <li style="margin-right: 0;">
+                    <img src="./jcm/thumb_11469.png" alt="" height="126px">
+                </li>
+            </ul>
+            <div class="w1000 footer" style="clear: both;">
+                <a href="" class="icon-contact3"></a>
+                <a href="" class="icon-contact4"></a>
+                <a href="" class="icon-contact5"></a>
+                <a href="" class="icon-contact6"></a>
+                <p>Copyright ? 2014-2017 上海裕乾金融信息服务有限公司All Rights Reserved 　沪ICP备14035976号-1 沪ICP备16006644号-1</p>
+            </div>
+            
+        </div>
+        <!-- contact end -->
+
+    </div>
+</body>
+
+</html>

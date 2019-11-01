@@ -1,0 +1,40 @@
+.title{
+    color: red;
+    // normal 正常  italic 倾斜
+    font-style: normal;
+}
+.it1{
+    font-weight: bold;
+}
+
+// .father{
+//     .son{
+//         p{
+//             color: gold;
+//         }
+//     }
+// }
+
+// 相当于上面的一堆，字体属性都可以被继承
+.father{
+     color: gold;    //a标签不会继承这个，需要直接定位到a标签进行设置
+    .son1{
+        a{
+            color: gold;
+        }
+    }
+}
+
+.item1{
+    text-decoration: underline;
+    text-align: center;
+    line-height: 80px;
+}
+.item2{
+    text-decoration: overline;
+    text-align: left;
+}
+.item3{
+    text-decoration: line-through;
+    text-align: right;
+}

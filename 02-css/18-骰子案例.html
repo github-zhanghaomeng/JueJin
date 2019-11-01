@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 120px;
+            height: 120px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px 0 #999;
+            border: 3px solid #ddd;
+            margin: 5px;
+            padding: 10px;
+            display: flex;
+        }
+        .item{
+            background-color: #999;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .one{
+            justify-content: center;
+            align-items: center;
+        }
+        .two{
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .three{
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: space-around; */
+        }
+        .three div:first-child{
+            align-self: flex-start;
+        }
+        .three div:last-child{
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container one">
+        <div class="item">
+
+        </div>
+    </div>
+    <div class="container two">
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="container three">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

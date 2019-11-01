@@ -1,0 +1,23 @@
+/* id选择器 */
+#box{
+    color: red;
+}
+/* 标签选择器 */
+div{
+    color: gold;
+}
+/* 后代选择器 */
+div span{
+    color: skyblue;  /* 后面的css属性会把后面的css属性覆盖掉 */
+}
+/* class选择器 */
+.item{
+    color: pink;
+}
+p{
+    color: blue;
+}
+/* 交集选择器 */
+p.item{
+    color:yellow;
+}

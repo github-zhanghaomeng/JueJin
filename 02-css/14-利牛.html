@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>利牛投资</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .w960 {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    /* 网站头部  css start */
+    .wrap {
+        background-color: #e65224;
+    }
+
+    .top {
+        height: 108px;
+    }
+
+    .top ul li {
+        padding-top: 35px;
+        border: 1px solid red;
+    }
+
+    /* 网站头部  css end */
+
+    /* 网站导航  css start */
+    .content .nav {
+        height: 80px;
+        line-height: 80px;
+    }
+
+    .content .nav ul li a {
+        text-decoration: none;
+        color: #4d4d4d;
+        margin-right: 65px;
+    }
+
+    .content .nav ul li a:hover {
+        color: #e75225;
+    }
+
+    .content .nav ul li {
+        float: left;
+    }
+
+    .content .nav ul li a.first {
+        color: #e75225;
+        padding-left: 19px;
+    }
+
+    /* 网站导航  css end */
+
+    /* 网站优势  css start */
+    .advantage {
+        height: 81px;
+        margin-top: 47px;
+    }
+
+    .advantage div {
+        width: 320px;
+        float: left;
+    }
+
+    .advantage div img {
+        float: left;
+        margin-right: 12px;
+    }
+
+    .advantage div dd {
+        color: #696969;
+        font-size: 12px;
+        line-height: 2;
+    }
+
+    .advantage div dt {
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    /* 网站优势  css end */
+
+    /* 网站主要业务  css start */
+    .main .mainTop {
+        margin-top: 62px;
+        margin-bottom: 54px;
+        text-align: center;
+    }
+
+    .main .mainContent {
+        width: 225px;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .main .mainContent img {
+        margin-bottom: 29px;
+    }
+
+    .main .mainContent dl dt {
+        color: #ff6537;
+        line-height: 2;
+    }
+
+    .main .mainContent dl dd {
+        color: #9f9f9f;
+        font-size: 14px;
+        line-height: 2;
+        margin-bottom: 31px;
+    }
+
+    .main .mainContent a {
+        text-decoration: none;
+        background-color: #4b4b4b;
+        color: #fff;
+        display: inline-block;
+        width: 103px;
+        height: 39px;
+        line-height: 39px;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    /* 网站主要业务  css end */
+
+    /* 网站关于我们  css start */
+    .about {
+        clear: both;
+        height: 193px;
+        background-image: url("./imgs/10.jpg");
+        color: #fff;
+        text-align: center;
+    }
+
+    .about div h4 {
+        font-size: 20px;
+        margin-top: 36px;
+    }
+
+    .about div p {
+        font-size: 14px;
+        width: 547px;
+        line-height: 2;
+        margin: 38px auto 0;
+    }
+
+    /* 网站关于我们  css end */
+
+    /* 网站新闻问题  css start */
+    .problemNews .newsTop h3 {
+        float: left;
+        margin-top: 62px;
+        color: #212121;
+        font-size: 22px;
+        font-weight: normal;
+        margin-bottom: 24px;
+    }
+
+    .problemNews .newsTop span {
+        color: #a7a7be;
+        font-size: 18px;
+        font-weight: normal;
+
+    }
+
+    .problemNews .newsContent ul li {
+        float: left;
+        margin-right: 28px;
+    }
+
+    .problemNews .newsContent img {
+        display: block;
+
+    }
+
+    .problemNews .newsContent ul li a {
+        text-decoration: none;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .problemNews .newsContent ul li a:hover {
+        color: red;
+    }
+
+    /* 网站新闻问题  css send */
+
+    /* 网站合作机构  css start */
+    .cooperation {
+        clear: both;
+        /* border: 1px solid red; */
+        height: 330px;
+        background-color: #f6f6f6;
+        
+    }
+    .cooperation .cooperationF h3{color: #666;font-size: 18px;font-weight: normal;margin-top: 51px;padding-top: 51px;}
+    .cooperation .cooperationF img{margin-top: 38px;}
+    /* 网站合作机构  css end */
+
+    /* 网站的联系我们  css start */
+        .contant{height: 235px;background-color: #2c2c2c;border-bottom: 1px solid #aaa;}
+        .contant ul{color: #a9a9a9;}
+        .contant ul li{float :left;}
+        .contant ul li h3{font-weight: normal;margin-top: 56px;margin-bottom: 32px;}
+        .contant ul li p{font-size: 14px;line-height: 2;}
+    /* 网站的联系我们  css end */
+
+    /* 网站的底部  css start */
+    .footer{height: 67px;background-color: #2c2c2c;text-align: center;}
+    .footer p{color: #666666;font-size: 14px;width: 219px;padding-top: 18px;}
+    .footer p a{color: #666666;text-decoration: none;}
+    .footer p a:hover{color:#e75225}
+    /* 网站的底部  css end */
+</style>
+
+<body>
+    <div class="wrap">
+        <!-- 网站头部 start -->
+        <div class="top w960">
+            <ul>
+                <li><img src="./imgs/01.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 网站头部 end -->
+    <div class="content">
+        <!-- 网站导航 start -->
+        <div class="nav w960">
+            <ul>
+                <li><a href="" class="first">首页</a></li>
+                <li><a href="">关于利牛</a></li>
+                <li><a href="">行业资讯</a></li>
+                <li><a href="">主要业务</a></li>
+                <li><a href="">安全保障</a></li>
+            </ul>
+        </div>
+        <!-- 网站导航 end -->
+
+        <!-- 网站图片 start -->
+        <div class="photo w960">
+            <img src="./imgs/02.jpg" alt="">
+        </div>
+        <!-- 网站图片 end -->
+
+        <!-- 网站优势 start -->
+        <div class="advantage w960">
+            <div>
+                <img src="./imgs/03.jpg" alt="" style="margin-left: 5px;">
+                <dl>
+                    <dt>稳定高收益</dt>
+                    <dd>40倍银行活期存款利息</dd>
+                    <dd>100元起投，交易0手续费</dd>
+                </dl>
+            </div>
+            <div>
+                <img src="./imgs/04.jpg" alt="">
+                <dl>
+                    <dt>安全严保障</dt>
+                    <dd>本息保障，风险审核贷</dd>
+                    <dd>后管理</dd>
+                </dl>
+            </div>
+            <div>
+                <img src="./imgs/05.jpg" alt="">
+                <dl>
+                    <dt>便捷优服务</dt>
+                    <dd>24小时放宽，提前还款减免</dd>
+                    <dd>费用</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- 网站优势 end -->
+
+        <!-- 网站主要业务 start -->
+        <div class="main w960">
+            <div class="mainTop">
+                <h3 style="color: #4b4b4b;">主要业务<span style="color: #a7a7a7;">/ PRODUCTS SERVICES</span></h3>
+            </div>
+            <div class="mainContent">
+                <img src="./imgs/06.jpg">
+                <dl>
+                    <dt>投资业务</dt>
+                    <dd>证券投资业务，指银行购买有价证券的活动。</dt>
+                </dl>
+                <a href="">立即咨询>></a>
+            </div>
+            <div class="mainContent">
+                <img src="./imgs/07.jpg">
+                <dl>
+                    <dt>理财增值</dt>
+                    <dd>通过发行基金单位，集中投资者的资金，由基金管理人管理和运用资金。</dd>
+                </dl>
+                <a href="">立即咨询>></a>
+            </div>
+            <div class="mainContent">
+                <img src="./imgs/08.jpg">
+                <dl>
+                    <dt>信托服务</dt>
+                    <dd>信托业务建立了以项目为中心，以风险贯穿其间的业务运作平台。</dd>
+                </dl>
+                <a href="">立即咨询>></a>
+            </div>
+            <div class="mainContent" style="margin-right: 0;">
+                <img src="./imgs/09.jpg">
+                <dl>
+                    <dt>产品代理</dt>
+                    <dd>通过代理的形式，推广和买卖产品，是产品的一种交易和流通方式。</dd>
+                </dl>
+                <a href="">立即咨询>></a>
+            </div>
+        </div>
+        <!-- 网站主要业务 end -->
+
+        <!-- 网站关于我们 start -->
+        <div class="about w960">
+            <div>
+                <h4>关于我们</h4>
+                <p>利牛金融有限公司是在1991年5月13日成立的艾宏保险公司的基础上组建而成的金融集团公司，总部设在上海，以“推动和实现可持续的价值增长”为经营理念。</p>
+            </div>
+        </div>
+        <!-- 网站关于我们 end -->
+
+        <!-- 网站新闻问题 start -->
+        <div class="problemNews w960">
+            <div class="newsTop">
+                <h3 style="margin-right: 470px;">新闻资讯<span> / NEWS</span></h3>
+                <h3>常见问题<span> / Q&A</span></h3>
+            </div>
+            <div class="newsContent">
+                <ul>
+                    <li>
+                        <img src="./imgs/11.jpg" alt="">
+                        <p style="background-color: #424344;color: #fff;height: 30px;font-size: 14px;">活用理财小公式 让财富轻松翻倍！
+                        </p>
+                        <p><a href="">证监会：分级基金投资者门槛定为30</a></p>
+                        <p><a href="">两市震荡下行 次新股板块走势较分化</a></p>
+                        <p><a href="">机场民航板块起飞 上海机场涨3.31%</a></p>
+                        <p><a href="">人民币汇率有条件保持基本稳定</a></p>
+                    </li>
+                    <li>
+                        <img src="./imgs/12.jpg" alt="">
+                        <p style="background-color: #424344;color: #fff;height: 30px;font-size: 14px;">杜绝5种理财陋习 让你理财不伤心！
+                        </p>
+                        <p><a href="">年关将至，4件大事发生将影响你我的生活！</a></p>
+                        <p><a href="">投资理财5个地方该花的钱，你花了吗？</a></p>
+                        <p><a href="">关于年终奖的这些秘密你都知道吗？</a></p>
+                        <p><a href="">活用理财小公式 让财富轻松翻倍！</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 网站新闻问题 end -->
+
+        <!-- 网站合作机构 start -->
+        <div class="cooperation">
+            <div class="cooperationF w960">
+                <h3>合作机构</h3>
+                <img src="./imgs/13.jpg" alt="">
+            </div>
+        </div>
+        <!-- 网站合作机构 end -->
+
+        <!-- 网站联系我们 statr -->
+        <div class="contant">
+            <ul class="w960">
+                <li style="margin-right: 98px">
+                    <h3>联系我们</h3>
+                    <p>地址:广州市海珠区苏州街18号F栋3单元3A02</p>
+                    <p>邮编:510000</p>
+                    <p>邮件:2383003879@qq.com</p>
+                </li>
+                <li style="margin-right: 117px">
+                    <h3 style="margin-bottom: 0">客服热线</h3>
+                    <p style="font-size: 22px;">18825039863</p>
+                    <p>(工作时间:9:00-21:00)</p>
+
+                </li>
+                <li style="margin-right: 77px">
+                    <h3>商家服务</h3>
+                    <p>商家入驻</p>
+                    <p>培训中心</p>
+                    <p>广告服务</p>
+                    <p>服务市场</p>
+                </li>
+                <li>
+                    <h3>帮助信息</h3>
+                    <p>帮助中心</p>
+                    <p>赎回投资</p>
+                    <p>新手指引</p>
+                    <p>安全保障</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 网站联系我们 end -->
+
+        <!-- 网站底部 start -->
+        <div class="footer">
+            <p class="w960">©2016利融金融有限公司 版权所有 本站使用<a href="">凡诚科技</a><span> 搭建</span></p>
+        </div>
+        <!-- 网站底部 end -->
+
+</body>
+
+</html>

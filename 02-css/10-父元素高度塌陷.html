@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wraper{
+            border: 1px solid red;
+            /* height: 1000px; 解决塌陷的第一种方法*/
+             overflow: hidden;  /*解决塌陷的第二种方法*/
+            
+        }
+        .box1{
+            float: left;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="wraper">
+        <div class="box1">div1</div>
+        <div class="box1">div2</div>
+        <div class="box1">div3</div>
+    </div>
+</body>
+
+</html>

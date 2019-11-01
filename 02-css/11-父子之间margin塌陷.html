@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .father{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            margin-top: 80px; 
+            /* padding-top: 80px;  解决塌陷的第一种方法 */
+            /* border: 1px solid red; 解决塌陷的第二种方法 */
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin-top: 80px;  /*不给父元素设置margin，只给儿子设置margin时 ，是总体往下移80px 跟只设置父元素margin一样*/
+            display: inline-block;  /*解决塌陷的第三种方法 */
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son</div>
+    </div>
+</body>
+</html>
