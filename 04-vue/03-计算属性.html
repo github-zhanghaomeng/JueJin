@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <p>{{computeAge()}}</p>
+        <p>{{computeAge()}}</p> -->
+        <p>{{computeAge}}</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                age: 31
+            },
+            // methods:{
+            //     computeAge(){
+            //         console.log("方法");
+            //         if(this.age>30){
+            //             return "三十而立"
+            //         }
+
+            //     }
+            // },
+            computed: {
+                computeAge() {
+                    console.log("计算属性");
+                    if (this.age > 30) {
+                        return "三十而立"
+                    }
+                }
+            }     //如果方法和计算属性名字一样时，会使用方法的
+        })
+    </script>
+</body>
+
+</html>

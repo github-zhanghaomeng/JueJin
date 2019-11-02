@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- {{getFullName}}
+        {{getFullName}}
+        {{getFullName}}
+        {{getFullName}} -->
+
+        <!-- {{getFullName()}}
+        {{getFullName()}}
+        {{getFullName()}} -->
+
+        
+        {{fullName}}   <!-- watch -->
+       
+    </div>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                firstName:"张",
+                lastName:"三",
+                fullName:""
+            },
+            // mounted(){
+            //     this.getFullName()  //放到钩子函数watch第一次就会触发
+            // },
+
+
+            // watch:{
+            //     firstName(){
+            //         this.getFullName()  //watch第一次不会触发,只有当第一个或最后一个改变时才会触发
+            //     },
+            //     lastName(){
+            //         this.getFullName()
+            //     }
+            // },
+
+            watch:{
+                firstName:{
+                    handler(newValue){
+                        // this.getFullName()   //watch的另外一种写法，第一次就会触发
+                        setInterval(()=>{
+                            this.getFullName()  //watch支持异步
+                        },3000)
+                    },
+                    immediate:true
+                }
+            },
+            methods:{
+                // getFullName(){
+                //     console.log("方法")
+                //     return this.firstName + this.lastName  //方法中没有缓存
+                // },
+
+                getFullName(){
+                    this.fullName = this.firstName + this.lastName  //watch
+                }
+            },
+            computed:{
+                getFullName(){
+                    console.log("计算属性");
+                    return this.firstName + this.lastName  //计算属性内有缓存
+                }
+            }
+        })
+    </script>
+</body>
+</html>

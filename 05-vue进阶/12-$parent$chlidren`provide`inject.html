@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        .title {
+            width: 100px;
+            border: 1px solid red;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <collapse>
+            <collapse-item title="react">内容1</collapse-item>
+            <collapse-item title="vue">内容2</collapse-item>
+            <collapse-item title="node">内容3</collapse-item>
+        </collapse>
+    </div>
+
+    <script>
+        Vue.component ("Collapse", {
+                methods: {
+                    cut(childrenId) {
+                        this.$children.forEach(children => {
+                            if (children._uid != childrenId) {
+                                children.show = false
+                            }
+                        });
+                    }
+                },
+                template: `<div class="wrap"><slot></slot></div>`
+            })
+        Vue.component("CollapseItem",{
+                props: ['title'],
+                data() {
+                    return {
+                        show: false
+                    }
+                },
+                methods: {
+                    change() {
+                        this.$parent.cut(this._uid);
+                        this.show = !this.show
+                    }
+                },
+                template:
+                    `<div>
+                        <div class="title" @click="change">{{title}}</div>
+                        <div v-show="show">
+                            <slot></slot>
+                        </div>
+                    </div>`
+            })
+        
+        let vm = new Vue({
+            el: "#app",
+           
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <h1 v-text="msg"></h1>
+        <p v-text="name"></p>
+        <p v-html="name"></p>
+        <input type="text" v-model="msg">
+        <a :href="hrefname">百度</a>
+        <p v-for="(value,index) in links">{{value.name}} 链接:<a :href="value.link">{{value.name}}</a></p>
+        <p v-for="(value,key,index) in obj">
+            第一个参数:{{value}}
+            第二个参数:{{key}}
+            第三个参数:{{index}}
+        </p>
+        <!-- v-show -->
+        <!--1 <p v-show="hrllo">这是一个p标签</p>   在data中没有hrllo时会报错 -->
+        <!--2 <p v-show="isShow">这是一个p标签</p> -->
+        <!--3 <p v-show="0">这是一个p标签</p> -->
+        <!--4 <p v-show="false">这是一个p标签</p> -->
+
+        <!-- v-if  -->
+        <!-- 1<p v-if="isShow">这是一个p标签</p> -->
+        <!-- 2<p v-if="score>=60">及格</p>
+        <p v-else>不及格</p> -->
+
+        <!-- 3 -->
+        <!-- <p v-if="score >=90">A</p>
+        <p v-else-if="score >=80">B</p>
+        <p v-else-if="score >=70">C</p>
+        <p v-else>D</p> -->
+    </div>
+    <script>
+        var app = new Vue({
+            el : "#app",
+            data : {
+                msg : "hello world",
+                name : "<strong>wangcai</strong>",
+                hrefname : "http://www.baidu.com",
+                num : 100,
+                links : [{name:"百度",link:"http://www.baidu.com"},
+                        {name:"谷歌",link:"http://www.guge.com"},
+                        {name:"新浪",link:"http://www.xinlang.com"}],
+                obj : {
+                    name : "wangcai",
+                    age : 10
+                },
+                score : 70,
+                isShow : true
+            }
+        })
+    </script>
+</body>
+</html>

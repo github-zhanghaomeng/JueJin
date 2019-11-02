@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id='app1'>
+        <p>我是父组件，我要使用子组件的值{{a}}</p>
+        <son @sonvalue=jieshou></son>
+    </div>
+    <template id='son'>
+        <div>
+            <p>我是子组件，我也要使用自己的值{{value}}</p>
+            <button @click='fashe'>发射</button>
+        </div>
+    </template>
+    <script>
+        let Son = {
+            template: '#son',
+            data() {
+                return {
+                    value: 100
+                }
+            },
+            methods:{
+                fashe(){
+                    this.$emit('sonvalue',this.value)
+                }
+            }
+        }
+        var vm = new Vue({
+            el: '#app1',
+            data:{
+                a:''
+            },
+            components: {
+                Son
+            },
+            methods:{
+                jieshou(num){
+                    // alert(num)
+                    this.a = num
+                }
+            }
+        })   
+    </script>
+</body>
+
+</html>

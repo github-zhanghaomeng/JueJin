@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <style>
+    #app{
+            width: 500px;
+            border: 1px solid #ccc;
+            margin: 50px auto 0;
+        }
+        .list{
+            position: relative;
+
+        }
+        .list:hover .del{display: block;}
+        .item{
+            width: 470px;
+            height: 26px;
+            margin-top: 20px;
+            border-bottom: 1px solid black;
+        }
+        .inp{
+            width: 450px;
+            height: 30px;
+            font-size: 24px;
+
+        }
+        .s1{
+            float: right;
+        }
+        .done{
+            text-decoration: line-through;
+            color: #ccc;
+        }
+        .del{
+            position: absolute;
+            top: 0;
+            left: 384px;
+            display: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        
+            <h3>我的工作列表 已办[3] 待办[4]</h3>
+            <input type="text" placeholder="请输入代办事项..." class="inp" @keyup.enter="add($event)">
+            <div class="list" v-for="(todo,index) in todoList">
+                <p class="item" :class="{'done':todo.done}" >
+                    <input type="checkbox" v-model="todo.done">
+                    <span>{{todo.text}}</span>
+                    <span class="s1">{{todo.done ? "已办" : "待办"}}</span>
+                </p>
+                <span class="del" @click="del(index)">删除</span>
+            </div>
+        
+    </div>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                todoList:[
+                    {text:"睡觉",done:true},
+                    {text:"学习",done:false}
+                ],
+                
+            },
+            methods:{
+                add(a){
+                    let txt = a.target.value.trim();
+                    if(txt){
+                        this.todoList.push({text:txt,done:false});
+                        a.target.value=""
+                    }
+                },
+                del(index){
+                    this.todoList.splice(index,1)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

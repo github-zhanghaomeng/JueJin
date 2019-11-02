@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <my-button @click="change" :mbt="content"></my-button>  点击按钮不会触发事件 -->
+        <my-button @click="change" :mbt="content" @mouseup="change"></my-button> 
+        <!-- <my-button @click.native="change" :mbt="content"></my-button> 可以实现，但是当点击div(template里包括button)时也会触发事件 -->
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                content:"点我啊",
+            },
+            methods:{
+                change(){
+                    alert(1)
+                }
+            },
+            components:{
+                MyButton:{
+                    props:{mbt:String},
+                    // template:"<div><button>{{mbt}}</button></div>"
+                    // template:"<div><button v-on='$listeners'>{{mbt}}</button></div>"  //第三种方法，让上面两个方法都实现
+                    // template:`<div><button @click="$emit('click')">{{mbt}}</button></div>` //第二种方法
+                    // template:"<div><button @click='$listeners.click()'>{{mbt}}</button></div>"  //第一种方法
+                }
+            }
+        })
+    </script>
+</body>
+</html>

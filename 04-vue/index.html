@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table border="1"> 
+            <tr>
+                <th>姓名</th>
+                <th v-for='value in subjects'>
+                    {{value}}
+                </th>
+                <th>总分</th>
+            </tr>
+            <tr v-for='item in stus'>
+                <td>{{item.name}}</td>
+                <td v-for='value in item.score'>{{value}}</td>
+                <td>{{getTotalScore(item.score)}}</td>
+            </tr>
+            <tr>
+                <td>平均分</td>
+                <td v-for='(value,index) in subjects'>{{getAvg(index)}}</td>
+            </tr>
+        </table>
+        <h1>{{getAllScore()}}</h1>
+        <!-- <p>语文{{getAvg()}}</p> -->
+    </div>
+    
+</body>
+
+<script>
+    var app = new Vue ({
+        el:'#app',
+        data:{
+            stus:[
+            {name:'z3',score:[43,45,32]},
+            {name:'l4',score:[43,45,32]},
+            {name:'w5',score:[43,45,32]},
+            {name:'z6',score:[43,45,32]}
+            ],
+            subjects:['语文','数学','英语']
+        },
+        methods:{
+            getTotalScore(arr){
+                return arr.reduce((prev,next)=>prev+next)
+            },
+            getAllScore(){
+                let total = 0 
+                this.stus.forEach(item => {
+                    total += this.getTotalScore(item.score)
+                });
+                return total
+
+            },
+            getAvg(index){
+               let a = this.stus.map(item=>item.score[index])
+               return this.getTotalScore(a)/this.stus.length
+            }
+        }
+    })
+</script>
+</html>

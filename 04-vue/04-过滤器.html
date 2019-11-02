@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h4>{{pi | fixed2}}</h4>
+        <h4>{{pi | fixed3(3)}}</h4>
+        <h4>{{pi | fixed2 |insertBefore}}</h4>
+        <h4>{{pi | insertBefore2("*")}}</h4>
+    </div>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                pi : 3.1415926
+            },
+            filters: {
+                fixed2(d) {
+                    return d.toFixed(2);
+                },
+                fixed3(d, n) {
+                    return d.toFixed(n);
+                },
+                insertBefore(d) {
+                    return "$" + d;
+                },
+                insertBefore2(d, s) {
+                    return s + d;
+                }
+            }
+        })    
+    </script>
+</body>
+
+</html>

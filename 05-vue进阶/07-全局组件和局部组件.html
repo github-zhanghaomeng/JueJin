@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-button></my-button>
+    </div>
+   
+    <template id="a1">
+        <button>{{msg}}</button>
+    </template>
+    <script>
+        // 全局组件
+        // Vue.component("MyButton",{
+        //     data(){
+        //         return{
+        //             msg:"点我"
+        //         }
+        //     },
+        //     template:"<button>{{msg}}</button>"
+        // })
+
+        // 局部组件定义方式一
+        // let MyButton = {
+        //     data() {
+        //         return {
+        //             msg: "点我"
+        //         }
+        //     },
+        //     template: "<button>{{msg}}</button>"
+        // }
+
+        let vm = new Vue({
+            el: "#app",
+            components: {
+                // 局部组件定义方式二
+                MyButton:{
+                    data(){
+                        return{
+                            msg:"点我"
+                        }
+                    },
+                    // template:"<button>{{msg}}</button>"
+                    template:"#a1"
+                }
+            }
+        })
+        
+    </script>
+</body>
+
+</html>

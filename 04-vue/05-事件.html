@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <style>
+        .father {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <button v-for="value in 3" @click="f(value)">按钮{{value}}</button> -->
+        <!-- <div class="father" @click.capture="f1"> 阻止事件捕获(外到里)-->
+        <!-- <div class="son" @click.capture="f2($event)"  阻止事件捕获(外到里)> -->
+        <!-- <div class="son" @click.stop="f2($event)"> 阻止事件冒泡-->
+    <!-- </div>
+    </div> -->
+    <!-- <a href="http://www.baidu.com" @click.prevent="f3">百度</a>  阻止默认事件1-->
+    <!-- <a href="http://www.baidu.com" @click="f4($event)">百度</a>  阻止默认事件2-->
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                f(v) {
+                    alert(v);
+                },
+                f1() {
+                    console.log("father...")
+                },
+                f2(a) {
+                    // a.stopPropagation();    //阻止事件冒泡 
+                    console.log("son...");
+
+                },
+                f3(){
+                    alert("123");
+                },
+                f4(a){
+                    a.preventDefault();
+                    alert("123");
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+    <style>
+        .top{
+            background-color: skyblue;
+        }
+        span{
+            float: right;
+            font-weight :normal;
+            font-size: 12px;
+            height: 40px;
+            line-height: 40px;
+            color:red;
+        
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="f">注册</button>
+        <div style="border:2px solid red; width:400px;">
+            <h1 class="top">标题<span @click="f1">{{isShow ? "收起" : "展开"}}</span></h1>
+            <div :style="myStyle" v-show="isShow">
+                <p>内容</p>
+                <p>内容</p>
+                <p>内容</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                myStyle:{backgroundColor:'pink'},
+                isShow:true,
+            },
+            methods:{
+                f(){
+                    alert("注册成功了...")
+                },
+                f1(){
+                    this.isShow = !this.isShow;
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

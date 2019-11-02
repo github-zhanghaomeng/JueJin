@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-button msg="点我"></my-button>
+    </div>
+
+    <template id="bt">
+        <div>
+            <button>{{msg}}</button>
+            <my :a="msg"></my>
+        </div>
+    </template>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            components:{
+                MyButton:{
+                    template:"#bt",
+                    // template:" <div><button>{{msg}}</button><my :a='msg'></my></div>",
+                    props:{
+                        msg:String
+                    },
+                    components:{
+                        My:{
+                            template:"<button>{{a}}</button>",
+                            props:{
+                                a:String
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

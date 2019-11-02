@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-button :mbt="msg" a="1" b="2"></my-button>
+    </div>
+
+    <!-- <template id="bt">
+        <div>
+            <button>{{mbt}}</button> 
+            <my v-bind="$attrs"></my>
+        </div>
+    </template> -->
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "点我"
+            },
+            components: {
+                MyButton: {
+                    props:{mbt:String},
+                    inheritAttrs:false,
+                    template:"<div><button>{{mbt}}</button><my v-bind='$attrs'></my></div>",  //mbt用了在attrs中就没有mbt
+                    // template:"#bt",
+                    mounted() {
+                        console.log(this.$attrs)  //把父组件传递的没有用到数据都存在attrs中 a:1 b:2
+                    },
+                    components: {
+                    My: {
+                        props:['a'],   //可以选择自己接受的数据
+                        template:`<span>{{a}}</span>`  
+                    }
+                }
+                },
+                
+            }
+        })
+    </script>
+</body>
+
+</html>

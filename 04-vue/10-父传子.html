@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>我是父组件，我要使用自己的数据{{num}}</p>
+        <son :sonnum = "num"></son>
+    </div>
+    <template id="son">
+        <div>
+            <p>我是子组件，我要使用父组件的数据{{sonnum}}</p>
+            <!-- <button @click="sonnum=1000">修改数据</button> -->
+            <p>使用数据{{mynum}}</p>
+            <button @click="mynum=1000">修改数据</button>
+        </div>
+    </template>
+    <script>
+        let Son = {
+            template : "#son",
+            props:{
+                sonnum:Number,
+            },
+            data(){
+                return{
+                    mynum:this.sonnum,
+                }
+            }
+        }
+        var app = new Vue({
+            el:"#app",
+            data:{
+                num:100
+            },
+            components:{
+                Son,
+            }
+        })
+    </script>
+</body>
+</html>

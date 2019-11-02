@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{info.address}}
+        {{arr}}
+        {{info.a}}
+    </div>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                info:{
+                    a:"hello"
+                },
+                arr:[1,2,3,4]
+            }
+        })
+        // vm.info.address="world"   address不会显示
+
+        // vm.info={address:"world"}   会显示
+
+        // vm.info={address:"world"}
+        // vm.info.address = "1"    会显示1
+
+        // vm.$set(vm.info,"address","abc")  显示abc
+
+        // vm.arr.length--  长度不会减少
+        
+        // vm.arr.push("5")  可以加到数组里
+
+        // vm.info.a = "world" 可以修改值
+
+        // vm.arr = [3,4,5]  可以修改
+    </script>
+</body>
+</html>

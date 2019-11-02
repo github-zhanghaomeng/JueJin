@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table border="1">
+            <tr>
+                <th>姓名</th>
+                <th v-for="value in subjects">{{value}}</th>
+                <th>总分</th>
+            </tr>
+            <tr v-for="value in stus">
+                <td>{{value.name}}</td>
+                <td v-for="a in value.score">{{a}}</td>
+                <td>{{getTotalScore(value.score)}}</td>
+            </tr>
+            <tr>
+                <th>平均分</th>
+                <td v-for="(value,key) in subjects">{{getAvg(key)}}</td>
+            </tr>
+        </table>
+        <h3>总成绩 {{getTotalScoreAll()}}</h3>
+        <h3>英语不及格的学生:{{getYYFail()}}</h3>
+        <p v-for="value in getYYFail()">姓名:{{value.name}} -- 英语成绩:{{value.score[2]}}</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                stus:[
+                    {name:"z3",score:[45,43,64]},
+                    {name:"l4",score:[53,67,54]},
+                    {name:"w5",score:[24,34,76]},
+                    {name:"z6",score:[86,56,54]},
+                ],
+                subjects:["数学","语文","英语"]
+            },
+            methods:{
+                getTotalScore(arr){
+                   return arr.reduce((prev,next)=>prev+next);
+                },
+                getTotalScoreAll(){
+                    let total = 0;
+                    this.stus.forEach(item => {
+                        total += this.getTotalScore(item.score);
+                    });
+                    return total;
+                },
+                getAvg(index){
+                    let a = this.stus.map(item=>item.score[index]);
+                    let b = this.getTotalScore(a)/this.stus.length;
+                    return b;
+                },
+                getYYFail(){
+                    return this.stus.filter(item=>item.score[2]<60);
+                }
+                
+            },
+            computed:{
+               
+            }
+
+
+        })
+    </script>
+</body>
+</html>

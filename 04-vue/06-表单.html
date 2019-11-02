@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form action="">
+            <p>
+                <label for="">姓名</label>
+                <input v-model="info.name" type="text">
+            </p>
+            <p>
+                <label for="">性别</label>
+                <input v-model="info.sex" type="radio" name="sex" value="男">男
+                <input v-model="info.sex" type="radio" name="sex" value="女">女
+            </p>
+            <p>
+                <input v-model="info.isagree" type="checkbox">同意
+            </p>
+            <p>
+                兴趣爱好
+                <input value="book" v-model="info.favorate" type="checkbox">看书
+                <input value="sing" v-model="info.favorate" type="checkbox">唱歌
+                <input value="study" v-model="info.favorate" type="checkbox">学习
+            </p>
+            <p>
+                教育
+                <select v-model="info.edu">
+                    <option value="请选择">请选择</option>
+                    <option :value="value" v-for="value in eduOption">{{value}}</option>
+                </select>
+            </p>
+        </form>
+        <hr>
+        <h4>个人信息</h4>
+        {{info}}
+    </div>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                eduOption:["重点","一本","二本"],
+                info:{
+                    name:"",
+                    sex:"男",
+                    isagree:false,
+                    favorate:["book"],
+                    edu:"请选择"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                a: 1,
+                b: 2
+            },
+            template: "<div><p>hello world~</p></div>",
+            beforeCreate() {
+                console.log("beforeCreate")
+                console.log(this,this.$data)  //undefined不能获取数据，初始化生命周期，并且绑定自己的事件
+            },
+            created() {
+                console.log("created")
+                console.log(this.$data)  //可以获取数据，可以调用ajax,并且是异步的
+                console.log(this.a)
+            },
+            beforeMount(){  
+                console.log("渲染前")
+                console.log(this.b)  //第一次调用渲染函数之前
+               
+            },
+            mounted(){
+                console.log("渲染后",this.$el.innerHTML) //获得真实DOM(<p>hello world~</p>)，可以发ajax
+                let timer = setInterval(()=>{
+
+                })
+            },
+            beforeUpdate(){
+                console.log("更新前..")
+                this.b=20;
+               
+            },
+            updated(){
+                this.b =20;
+                console.log("更新后...")
+            },
+            beforeDestroy(){
+                clearInterval(this.timer);
+                console.log("销毁前...")
+            },
+            destroyed(){
+                console.log("销毁后...")  //实例上的方法
+            },
+
+        })
+        vm.$destroy()  //第一种方法 路由切换  手动销毁
+    </script>
+</body>
+
+</html>
