@@ -1,0 +1,45 @@
+<script>
+    /*1.不能提升变量
+    let a = 1;
+    function f(){
+        console.log(a);
+        let a = 10;
+    }
+    f();   出现Cannot access 'a' before initialization
+    */
+
+   /*2.lets是块级区域，必须在let声明的块中才可以有效
+   {
+       var a = 100;
+   }
+   console.log(a);  可以
+   
+   {
+        let b = 100; 
+        console.log(b);   
+    }
+    // console.log(b); 出现 b is not define
+    */
+
+   /*3.let不会形成window对象
+   var a = 100;
+   console.log(window.a); 出现100
+
+   let b = 100;
+   console.log(window.b);  出现undefined
+   */
+
+    /*4.不能重复定义
+    let a = 10;
+    console.log(a);
+    let a = 100;
+    console.log(a);
+    */
+
+   /*5.必须先定义再使用
+    a = 100;
+    let a = 10;
+    console.log(a);
+    */
+
+</script>

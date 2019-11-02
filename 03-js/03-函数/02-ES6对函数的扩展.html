@@ -1,0 +1,77 @@
+<script>
+    // 1.参数默认值 没有给形参传递值时，使用默认值  
+   /*function f(let a=10,let b=20){
+       // 可以把a,b看成函数的局部变量(带 var)
+        return a+b;
+    }
+    console.log(f());*/
+
+    //2.传递的话用传递的
+    /*function f(a=10,b=20){
+        return a+b;
+    }
+    console.log(f(1,2));*/
+
+    /*function f(a,b,c,d=10){
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+    }
+    f(1,2,3);*/
+    
+    /*function f(a,b,c){
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    }
+    f(1,2,3,4);*/
+
+    /*function f(a,...rest){
+        console.log(a);
+        //rest是数组  这是自己命名的 必须是最后一个 可以代替arguments 在函数定义形参位置写的...
+        console.log(rest);
+    }
+    f(1,2,3,4);*/
+
+    //拓展运算符 ... 把容器里面的每一个元素都取出来
+    /*function f(){
+        let arr = [1,2,3];
+        let arr2 = [...arr];
+        console.log(arr);
+        console.log(arr2);
+        arr[0] = 666;
+        console.log(arr);
+        console.log(arr2);
+    }
+    f();*/
+    
+
+    //箭头函数  没有arguments  但是有rest代替  也没有this
+    /*let f = (a,b)=>{
+        return a+b;
+    }
+    console.log(f(1,2));
+    */
+
+    //特点1 如果形参只有一个，那么小括号可以不用写
+    /*let f = a=>{
+        return a;
+    }
+    console.log(f(1));*/
+
+    //特点2 如果函数体只有一条语句 可以把大括号省去  也必须把return去掉
+    /*let f = (a,b)=>a+b;
+    console.log(f(20,20));*/
+
+    //特点3  返回了对象,并且函数体只有一句时(可以把return 和大括号去掉)，大括号去掉时需要在对象前加()
+    /*let f = ()=>({name:"wangcai"});
+    console.log(f());*/
+
+    //特点4 没有return语句时  大括号也可以省去
+    /*let f = ()=>console.log(123);
+    f();*/
+
+</script>
+
+

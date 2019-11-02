@@ -1,0 +1,126 @@
+<script>
+    // 1.构造器
+    /*
+    function NBAPlayer(name,age,height,year){
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        this.year = year;
+    }
+    NBAPlayer.prototype.say = function(){
+        console.log(`我是${this.name},年龄是${this.age},身高是${this.height}`);
+    }
+    NBAPlayer.prototype.jump = function(){
+        console.log("jump...");
+    }
+    let a = new NBAPlayer("z3",18,188,2015);
+    a.say();
+    console.log(a.name);
+    */
+
+    // 2.构造器实现的继承
+    /*
+    function NBAPlayer(name, age, height) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+    }
+    NBAPlayer.prototype.say = function () {
+        console.log(`我是${this, name},年龄是${this.age},身高是${this.height}`);
+    }
+    NBAPlayer.prototype.jump = function () {
+        console.log("jump...");
+    }
+    function MVP(name, age, height, year) {
+        this.year = year;
+        //继承父类的属性
+        NBAPlayer.call(this, name, age, height);
+    }
+     //第一种继承父类的方法
+     
+    for(i in NBAPlayer.prototype){
+        MVP.prototype[i] = NBAPlayer.prototype[i];
+    }
+    MVP.prototype.constructor = MVP;
+    
+    //第二种继承父类的方法
+    MVP.prototype = NBAPlayer.prototype;
+    MVP.prototype.constructor = MVP;
+
+
+    MVP.prototype.showMvp = function(){
+        console.log(`我是${this.year}年的mvp`);
+    }
+
+    let a = new MVP("z3", 18, 188, 2015);
+    a.say();
+    a.jump();
+    console.log(a.name);
+    console.log(a.year);
+    a.showMvp();
+    */
+
+    // 3.使用class实现
+    /*
+    class NBAPlayer {
+        constructor(name, age, height) {
+            this.name = name;
+            this.age = age;
+            this.height = height;
+        }
+        say(){
+            console.log(`我是${this.name},年龄是${this.age},身高是${this.height}`);
+        }
+        jump(){
+            console.log("jump...");
+        }
+    }
+    let a = new NBAPlayer("z3",18,188);
+    console.log(a.name);
+    a.say();
+    */
+
+
+    // 4.使用class实现继承
+    /*
+    class NBAPlayer{
+        constructor(name,age,height){
+            this.name = name;
+            this.age = age;
+            this.height = height;
+
+        }
+        say(){
+            console.log(`我是${this.name},年龄是${this.age},身高是${this.height}`);
+        }
+        jump(){
+            console.log("jump...");
+        }
+    }
+
+    class MVP extends NBAPlayer{
+        constructor(name,age,height,year){
+            super(name,age,height);
+            this.year = year;
+        }
+        showMvp(){
+            console.log(`我是${this.year}年的mvp`);
+        }
+
+    }
+
+    let a = new MVP("z3",18,188,2015);
+    console.log(a.name);
+    a.say();
+    a.jump();
+    a.showMvp();
+    */
+
+
+
+
+
+
+
+
+</script>

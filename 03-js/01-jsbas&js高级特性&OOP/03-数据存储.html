@@ -1,0 +1,42 @@
+<script>
+  /*1.基本数据类型存储在栈区
+    var a = 1;
+    var b = a;
+    console.log(a);  出现1
+    console.log(b);  出现1
+    b = 6;
+    console.log(a);  出现1
+    console.log(b);  出现6
+    */
+
+   /*2.引用数据类型存储在堆区
+    var a = [1,2,3];
+    var b = a;
+    console.log(a); 出现[1,2,3]
+    console.log(a); 出现[1,2,3]
+    console.log(b);
+    b[0] = 666;
+    console.log(a); 出现[666,2,3]
+    console.log(b); 出现[666,2,3]
+  */ 
+
+    /* 3.  
+    var a = [1,2,3];
+    var b = a;
+    console.log(a); 出现[1,2,3]
+    console.log(b); 出现[1,2,3]
+    b = [4,5,6];
+    console.log(a); 出现[1,2,3]
+    console.log(b); 出现[4,5,6]
+    */ 
+
+    /* 4.
+   var a = [1,2,3];
+   var b= a;
+   console.log(a); 出现[1,2,3]
+   console.log(b); 出现[1,2,3]
+   b[0] = [6,6,6];
+   console.log(a); 出现[[6,6,6],2,3]
+   console.log(b); 出现[[6,6,6],2,3]
+   */
+</script>

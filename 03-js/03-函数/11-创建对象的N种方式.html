@@ -1,0 +1,86 @@
+<script>
+    // 1.工厂
+    /*
+    function factory(w,h){
+        let obj = {};
+        obj.width = w;
+        obj.height = h;
+        obj.getC = function(){
+            return (this.width+this.height)*2;
+        }
+        obj.getS = function(){
+            return this.width*this.height;
+        }
+        return obj;
+
+    }
+    let r1 = factory(1,2);
+    let r2 = factory(2,3);
+    let r3 = factory(3,4);
+    console.log(r1.getC());
+    console.log(r2.getC());
+    console.log(r3.getC());
+    */
+
+
+    // 构造器
+    /*
+    function F(){}
+    //带new
+    let f = new F();
+    console.log(f);        //{}
+    console.log(typeof f);   //Object
+    //不带new 
+    let f = F();
+    console.log(f);      //undefined
+    console.log(typeof f);  //undefined
+    */
+
+
+    //new做的四件事
+    /*
+    1.创建一个对象;
+    2.f.__proto__ = F.prototype;
+    3.
+    4.reurn f
+    */
+
+    //构造器加原型
+    // function  F(w,h){
+    //     this.width = w;
+    //     this.height = h;
+    // }
+    // F.prototype.getC = function(){
+    //     return (this.width+this.height)*2;
+    // }
+    // F.prototype.getS = function(){
+    //     return this.width*this.height;
+    // }
+    // let r1 = new F(1,2);
+    // let r2 = new F(2,3);
+    // let r3 = new F(3,4);
+    // console.log(r1.getC());
+    // console.log(r2.getC());
+    // console.log(r3.getC());
+    // console.log(r1.getS());
+
+function Parent(yourname){
+    this.name = yourname;
+    
+
+}
+Parent.prototype.say = function(){
+    console.log(`我原名${this.name},现名${this.newname}`)
+}
+Son.prototype = Parent.prototype;
+Son.prototype.constructor = Son;
+
+function Son(yourname,newname){
+    Parent.call(this,yourname);
+    this.newname = newname;
+}
+var son1 = new Son("ls","zd");
+console.log(son1);
+son1.say();
+
+</script>

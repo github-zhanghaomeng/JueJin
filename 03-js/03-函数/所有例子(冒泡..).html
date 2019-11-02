@@ -1,0 +1,401 @@
+<script>
+    //1.冒泡排序
+    /*
+    let a = [5,4,3,2,1];
+    let b;
+    for(let i=1;i<=a.length-1;i++){
+        for(let j=0;j<=a.length-1-i;j++){
+            if(a[j+1]<a[j]){
+                b = a[j+1];
+                a[j+1] = a[j];
+                a[j] = b;
+             }
+        }
+        console.log(a);
+    }
+    */
+
+    // 2.选择排序
+    /*
+    let a = [5,4,3,2,1];
+    let minIndex;
+    let b;
+    for(let i=0;i<a.length-1;i++){
+        minIndex = i;
+        for(let j=i+1;j<a.length;j++){
+            if(a[j]<a[minIndex]){
+                minIndex = j;
+            }
+        }
+        b = a[minIndex];
+        a[minIndex] = a[i];
+        a[i] = b;
+        console.log(a);
+    }
+    */
+
+    // 3.插入排序
+    /*
+    let a = [5,4,3,2,1];
+    let preIndex;
+    let current;
+    for(let i=1;i<=a.length-1;i++){
+        preIndex = i-1;
+        current = a[i];
+        while(preIndex>=0 && current<a[preIndex]){
+            a[preIndex+1] = a[preIndex];
+            preIndex = preIndex-1;
+        }
+        a[preIndex+1] = current;
+        console.log(a);
+    }
+    */
+
+    // 4.map
+    /*(1)
+    let a = [5, 4, 3, 2, 1];
+    let b = a.map(function (item) {
+        return item + 1;
+    })
+    console.log(b);
+
+    (2)
+    let a = [{ name: "z3", score: 60 }, { name: "l4", score: 70 }, { name: "w5", score: 80 }];
+    let b = a.map(function (item) {
+        return item.score = item.score + 10;
+    })
+    console.log(b);
+    */
+
+
+    // 5.模拟map
+    /*(1)
+    let a = [5,4,3,2,1];
+    Array.prototype.MyMap = function(f){
+        let newArr = [];
+        for(let i=0;i<this.length;i++){
+            newArr.push(f(this[i]));
+        }
+        return newArr;
+    }
+    let b = a.MyMap(function(item){
+        return item+1;
+    })
+    console.log(b);
+
+    (2)
+     let a = [{name:"z3",score:60},{name:"l4",score:70},{name:"w5",score:80}];
+    Array.prototype.Mymap = function(f){
+        let newArr = [];
+        for(let i=0;i<this.length;i++){
+            newArr.push(f(this[i]));
+        }
+        return newArr;
+    }
+    let b = a.Mymap(function(item){
+        return item.score+10;
+    })
+    console.log(b);
+    */
+
+    // 6.filter
+    /*
+    let a = [{name:"z3",score:60},{name:"l4",score:70},{name:"w5",score:80}];
+    let b = a.filter(function(item){
+        return item.score>=70;
+    })
+    console.log(b);
+    */
+
+    // 7.模拟filter
+    /*
+    let a = [{name:"z3",score:60},{name:"l4",score:70},{name:"w5",score:80}];
+    Array.prototype.Myfilter = function(f){
+        let newArr = [];
+        for(let i=0;i<this.length;i++){
+            if(f(this[i])){
+                newArr.push(this[i]);
+            }
+        }
+        return newArr;
+    }
+    let b = a.Myfilter(function(item){
+        return item.score>=70;
+    })
+    console.log(b);
+    */
+
+    // 8.数组去重
+    /*
+    let a = [1, 2, 3, 2, 3, 5, 3];
+    let m = {};
+    let p = [];
+    function f(a) {
+        for (let i = 0; i < a.length; i++) {
+            let t = a[i];
+            if(m[t]){
+
+            }
+            else{
+                p.push(t);
+                m[t] = true;
+            }
+
+        }
+        return p;
+    }
+    console.log(f(a));
+    */
+
+    // 9.计算数组中元素出现的次数
+    /*
+    let a = [1, 2, 3, 2, 3, 5, 3];
+    let m ={};
+    function f(a){
+        for(let i=0;i<a.length;i++){
+            let t = a[i];
+            if(m.hasOwnProperty(t)){
+                m[t] += 1;
+            }
+            else{
+                m[t] = 1;
+            }
+        }
+        return m;
+    }
+    console.log(f(a));
+    */
+
+    // 10.查看数据类型
+    /*
+    let a =[1,2,3];
+    let b = function(){}
+    console.log(Object.prototype.toString.call(a));
+    console.log(Object.prototype.toString.call(b));
+    */
+
+    // 11.计算一个函数运行所用的时间
+    /*
+    function computeTime(f){
+        let startTime = new Date().getTime();
+        let p =[];
+        for(let i=0;i<arguments.length;i++){
+            p.push(arguments[i]);
+        }
+        f.apply(null,p);
+        let endTime = new Date().getTime();
+        let yourTime = endTime-startTime;
+        return yourTime;
+
+    }
+    function f1(a){}
+    function f2(b,c){}
+    console.log(computeTime(f1,10));
+    console.log(computeTime(f2,10,20));
+    */
+
+    // 12.两个对象 共用一个方法
+    /*
+    let obj1 = {
+        name:"z3",
+        age:18
+    }
+    let obj2 = {
+        name:"l4",
+        age:18
+    }
+    function f(){
+        console.log(`我是${this.name},今年${this.age}岁`);
+    }
+    f.call(obj1);
+    f.call(obj2);
+    */
+
+    // 13.使用构造器
+    /*
+    function NBAPlayer(name,age,height){
+        this.name = name;
+        this.age = age;
+        this.height = height;
+    }
+    NBAPlayer.prototype.say = function(){
+        console.log(`我是${this.name},年龄是${this.age},身高是${this.height}`);
+    }
+    NBAPlayer.prototype.jump = function(){
+        console.log("jump...");
+    }
+
+    let a = new NBAPlayer("z3",18,188);
+    console.log(a.name);
+    a.say();
+    a.jump();
+    */
+
+    // 14.使用class
+    /*
+    class NBAPlayer{
+        constructor(name,age,height){
+            this.age = age;
+            this.name = name;
+            this.height = height;
+        }
+        say(){
+            console.log(`我是${this,name},年龄是${this.age},身高是${this.height}`);
+        }
+        jump(){
+            console.log("jump...");
+        }
+    }
+    let a = new NBAPlayer("z3",18,188);
+    console.log(a.name);
+    a.say();
+    a.jump();
+    */
+
+    // 15.使用构造器实现继承
+    /*
+    function NBAPlayer(name,age,height){
+        this.name = name;
+        this.age = age;
+        this.height = height;
+    }
+    NBAPlayer.prototype.say = function(){
+        console.log(`我是${this.name},年龄是${this.age},身高是${this.height}`);
+    }
+    NBAPlayer.prototype.jump = function(){
+        console.log("jump...");
+    }
+
+    function MVP(name,age,height,year){
+        this.year = year;
+        NBAPlayer.call(this,name,age,height);
+    }
+    // MVP.prototype = NBAPlayer.prototype;
+    // MVP.prototype.constructor = MVP;
+    for(let i in NBAPlayer.prototype){
+        MVP.prototype[i] = NBAPlayer.prototype[i];
+    }
+
+    MVP.prototype.showMvp = function(){
+        console.log(`我是${this.year}的MVP`);
+    }
+    let a = new MVP("z3",18,188,2015);
+    console.log(a.name);
+    a.showMvp();
+    a.say();
+    a.jump();
+    */
+
+    // 16.使用class实现继承
+    /*
+    class NBAPlayer{
+        constructor(name,age,height){
+            this.name = name;
+            this.age = age;
+            this.height = height;
+        }
+        say(){
+            console.log(`我是${this.name},年龄是${this.age},身高是${this.height}`);
+        }
+        jump(){
+            console.log("jump...");
+        }
+    }
+
+    class MVP extends NBAPlayer{
+        constructor(name,age,height,year){
+            super(name,age,height);
+            this.year = year;
+        }
+        showMvp(){
+            console.log(`我是${this.year}的MVP`);
+        }
+    }
+
+    let a = new MVP("z3",18,188,2015);
+    console.log(a.name);
+    a.showMvp();
+    a.say();
+    a.jump();
+    */
+
+    // 17.Promise
+    /*(1)
+   let p = new Promise((resolve,reject)=>{
+       let m = Math.random();
+       if(m>0.5){
+           resolve("包");         //Promise {<resolved>: "包"}
+       }
+       else{
+           reject("没钱");        //Promise {<rejected>: "没钱"}
+       }
+   })
+   console.log(p);
+   （2）
+   let p = new Promise((resolve,reject)=>{
+       let m = Math.random();
+       if(m>0.5){
+           resolve("包");       //包
+       }
+       else{
+           reject("没钱");      //没钱
+       }
+   })
+   p.then(err=>console.log(err),res=>console.log(res));
+   */
+
+    //    18.使用promise读文件   ——》写到js文件中
+    /*(1)
+    let p = new Promise((resolve, reject) => {
+        fs.readFile("out.txt", "utf8", (err, data) => {
+            if (err) {
+                reject(err);
+            }
+            else {
+                resolve(data);
+            }
+        })
+    })
+    p.then(err => console.log(err)).catch(res => console.log(res));
+    (2)
+    function file(filename){
+    return new Promise((resolve,reject)=>{
+        fs.readFile(filename,"utf8",(err,data)=>{
+            if(err){
+                reject(err);
+            }
+            else{
+                resolve(data);
+            }
+        })
+    })
+}
+    file("out.txt").then(err=>console.log(err)).catch(res=>console.log(res));
+    */
+
+
+</script>
+
+
+<!-- <script>
+    var a = {
+        name:"x3",
+        age:28,
+        say:function(){
+            console.log(this.name);
+            // console.log(abc);
+            // console.log(name);
+        }
+    }
+    a.say();
+    console.log(window.name);
+</script> -->
+
+
+
+
+
+
+<script>
+
+</script>

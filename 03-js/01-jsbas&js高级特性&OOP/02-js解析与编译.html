@@ -1,0 +1,63 @@
+<script>
+    // 提升变量 前3个会提升
+
+    /* 1.带var的变量
+     console.log(a);  出现undefine  var a;
+     var a=1; */
+
+    /*  2.循环变量
+      console.log(i);  出现undefine   var i ; i时循环变量
+      for(var i=1;i<=5;i++){
+          console.log(i); 出现  1 2 3 4 5
+      }   */
+
+    /*  3.函数内部带var的变量
+        function f(){
+          console.log(a);
+          var  a = 1;
+      }
+      f();     出现undefine var a;
+      console.log(a);  出现a is not define 说明把a提升到了函数内部的最前面
+      */
+
+    /* 4.不加var的变量
+      console.log(a);  出现a is not define  不会提升
+      a = 1;*/
+
+      //提升函数  会提升到代码块的最前面
+
+    /* 1.函数声明
+      f();     调用函数  出现f.... 会提升 
+      function f(){console.log("f....");}  函数声明
+    */ 
+
+    /* 2.函数表达式
+    g();   调用函数 出现g is not a function  不会提升 g是一个变量  g()相当于undefine()
+    var g=function(){console.log("g....");}  函数表达式
+    */ 
+
+    // 3.  f();  出现f is not define 
+
+    // 三、列子
+    /* 
+    console.log(a);  出现undefine   不管下面的是否执行  只要看到var 变量，就会提升
+    console.log(b);  出现undefine   
+    if(true){
+        var a = 1;
+    }
+    else{ 
+        var b = 2;
+    }
+    console.log(a); 出现1
+    console.log(b); 出现undefine
+    */
+
+
+
+
+</script>
+
+
+<script>
+    // 3.  function f(){console.log("f....");}
+</script>

@@ -1,0 +1,256 @@
+<script>
+    //1.Array.isArray()
+    /*let a = [1,2,3,4];
+    let b = Array.isArray(a);
+    console.log(b);*/
+
+    /*function f(...rest){
+        console.log(arguments);
+        console.log(Array.isArray(arguments));
+        console.log(rest);
+        console.log(Array.isArray(rest))
+    }
+    f(1,2,3);*/
+
+    // 2.forEach()
+    /*
+    let a = [1,2,3,4,5];
+    a.forEach(function (item,index){
+        console.log(`这个${item}元素下标为${index}`);
+        console.log(item);
+        item = 666;
+        console.log(item);
+    })
+    console.log(a); // [1,2,3,4,5]改变item的值不影响数组的值
+    */
+
+    // 3.map()处理老数组，返回新数组
+    /*
+   let a = [1,2,3,4,5];
+   let b = a.map(function(item){
+       return item+1;
+   })
+   console.log(b);  //[2,3,4,5,6]
+   */
+
+    /*
+   let a = [{name:"z3",score:60},
+            {name:"l4",score:70},
+            {name:"w5",score:80},
+   ];
+   let b = a.map(function(item){
+       return item.score + 10;
+   })
+   console.log(b);     //[70,80,90]
+   */
+
+    // 模拟map()
+    /*
+   let a = [1,2,3,4,5];
+   Array.prototype.MyMap = function(f){
+       let newArr = [];
+       for(let i=0;i<this.length;i++){
+           newArr.push(f(this[i]));
+       }
+       return newArr;
+   }
+   let b = a.MyMap(function(item){
+       return item+1;
+   })
+   console.log(b);
+   */
+
+    // 4.filter()
+    /*
+    let a = [1,2,3,4,5,6,7,8,9,10];
+    let b = a.filter(function(item){
+        return item>=5;
+    })
+    console.log(b);  //[5,6,7,8,9,10]
+    */
+
+    // 模拟filter
+    /*
+    let a = [1,2,3,4,5,6,7,8,9,10];
+    Array.prototype.Myfilter = function(f){
+        let newArr = [];
+        for(let i=0;i<this.length;i++){
+            if(f(this[i])){
+                newArr.push(this[i]);
+            }
+        }
+        return newArr;
+    }
+    let b = a.Myfilter(function(item){
+        return item>=5;
+    })
+    console.log(b);      
+    */
+
+    // 5.reduce()
+    /*
+    let a = [1,2,3,4,5,6,7,8,9,10];
+    let b = a.reduce(function(prev,next){
+        return prev+next;
+    })
+    console.log(b);  //55
+    */
+
+    /*
+   let a = [1,2,3,4,5,6,7,8,9,10];
+   let i =1;
+   let b = a.reduce(function(prev,next){
+       console.log(`第${i++}轮:前一项为${prev},后一项为${next}`);
+       console.log(`本次结果为${prev+next}`);
+       return prev+next;
+   })
+   */
+
+    /*
+    let a = [{name:"z3",score:60},{name:"l4",score:70},{name:"w5",score:80}];
+    let b = a.reduce(function(prev,next){
+        return {score:prev.score+next.score};
+    })
+    console.log(b);  //{score:210}
+    */
+
+    /*
+    let a = [{name:"z3",score:60},{name:"l4",score:70},{name:"w5",score:80}];
+    let {score} = a.reduce(function(prev,next){
+        return {score:prev.score+next.score};
+    })
+    console.log(score);  //210
+    */
+
+    /*
+    // 6.some()
+    let a = [{name:"z3",score:57},{name:"l4",score:70},{name:"w5",score:80}];
+    let b = a.some(function(item){
+        return item.score>=60;
+    })
+    console.log(b);   //true
+    */
+
+    //7.every()
+    /*
+    let a = [{name:"z3",score:57},{name:"l4",score:70},{name:"w5",score:80}];
+    let b =a.every(function(item){
+        return item.score>=60;
+    })
+    console.log(b);   //false
+    */
+
+    // 8.Array.from()
+    /*
+    function f(){
+        console.log(arguments);
+        console.log(Array.isArray(arguments));
+        let b = Array.from(arguments);
+        console.log(b);    //[1,2,3]
+        console.log(Array.isArray(b));   //true
+    }
+    f(1,2,3);
+    */
+
+
+    // 9.find()
+    /*
+    let a =[1,2,3,4,5,6,7,8,9,10];
+    let b1 = a.find(function(item){
+        return item == 2;      //2
+    })
+    let b2 = a.findIndex(function(item){
+        return item == 2;       //1
+    });
+    console.log(b1);
+    console.log(b2);
+    */
+
+     /*
+    let arr = [
+        { name: "z3", score: 66 },
+        { name: "l4", score: 57 },
+        { name: "w5", score: 88 },
+    ]
+    let rs1 = arr.find(function(item){
+        return item.score == 57
+    })
+    let rs2 = arr.findIndex(function (item) {
+        return item.score == 57
+    })
+    console.log(rs1);
+    console.log(rs2);
+    */
+
+    // 11.includes()
+    /*
+    let a = [1,2,3,4,5];
+    let b = a.includes(1);
+    console.log(b);    //true
+    */
+
+    // 12.fill()
+    /*
+    let a = [1,2,3];
+    let b = a.fill("*");
+    console.log(b);   //["*","*","*"]
+    */
+
+    /*
+    let a = new Array(3);  //建立一个长度为3的空数组
+    let b = a.fill("*");
+    console.log(b);   //["*", "*", "*"]
+    */
+
+    /*
+    let a =[1,2,3];
+    let b = a.fill("*",0,1);
+    console.log(b);      //["*", 2, 3]
+    */
+
+    // 13.Array.of()  把数变成数组
+    /*
+    let a = 3;
+    console.log(Array.of(a));  //[3]
+    */
+
+</script>
+
+<script>
+    // 给数组去重
+    /*
+    let a =[1,2,2,5,3,3];
+    let newArr = [];
+    let m = {};
+    for(let i=0;i<a.length;i++){
+        var t = a[i];
+        if(m[t]){        //if(t in m)
+
+        }else{
+            newArr.push(t);
+            m[t] = true;
+        }
+    }
+    console.log(newArr);
+     */
+
+
+    //  计算数组中元素出现的次数
+    /*
+    let a = [1,2,3,4,1,2,3,4];
+    let obj = {};
+    function f(arr){
+    for(let i=0;i<arr.length;i++){
+        var t = arr[i];
+        if(obj.hasOwnProperty(t)){
+            obj[t] += 1;
+        }
+        else{
+            obj[t] = 1;
+        }
+    }
+    return obj;
+}
+console.log(f(a));
+*/
+</script>

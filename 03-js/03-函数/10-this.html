@@ -1,0 +1,124 @@
+<script>
+    // 1.
+    /*
+    function f(){
+        console.log(this);
+    }
+    let obj = {name:"z3"};
+    f.call(obj);   //{name:"z3"}
+    */
+
+    // 2.call
+    /*
+    function f(a,b){
+        console.log(a,b);
+    }
+    let obj = {name:"z3"};
+    f.call(obj,1,2);     //1 2
+    */
+
+    // 3.apply
+    /*
+    function f(a,b){
+        console.log(a,b);
+    }
+    let obj = {name:"z3"};
+    f.apply(obj,[1,2]);    //1 2
+    */
+
+    // console.log(this);
+    // var o = {name:"abc",
+    //         say:function(){
+    //             console.log(this);
+    //         }}
+    // o.say();
+    // function f(){
+    //     console.log(this);
+    // }
+    // f();
+
+    // function f(){
+    //     console.log(this);
+    // }
+    // f();
+
+
+    //  let obj = {
+    //     name:"z3",
+    //     age:18,
+    //     say:function(){
+    //         console.log(this);
+    //     }
+    //  }
+    //  obj.say();
+
+    // function F(){
+    //     console.log(this);
+    // }
+    // let a = new F();
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// 1.判断数据类型
+/*
+let a = [1,2,3];
+let b =function(){};
+console.log(Object.prototype.toString.call(a));  //[Object Array]
+console.log(Object.prototype.toString.call(b));  //[Object Function]
+*/
+
+// 2.两个对象  共用方法
+/*
+let obj1 = {name:"z3",age:18};
+let obj2 = {name:"l4",age:20};
+function f(){
+    console.log(`我是${this.name},年龄是${this.age}`);
+}
+f.call(obj1);
+f.call(obj2);
+*/
+
+// 3.计算一个函数的运行时间
+/*
+function f1(a){}
+function f2(b,c){}
+function computeTime(f){
+    let startTime = new Date().getTime();
+    let p = [];
+    for(let i=1;i<arguments.length;i++){
+        p.push(arguments[i]);
+    }
+    f.call(null,p);
+    let endTime = new Date().getTime();
+    let yourTime = endTime-startTime;
+    return yourTime;
+}
+console.log(computeTime(f1,10));
+console.log(computeTime(f2,10,20));
+*/
+
+
+
+</script>

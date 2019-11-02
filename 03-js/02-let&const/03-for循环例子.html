@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        // let lis = document.getElementsByTagName("li");
+        // for(let i=0;i<lis.length;i++){
+        //     lis[i].onclick=function(){
+        //         console.log(i);
+        //     }
+        // }
+
+        // let lis = document.getElementsByTagName("li");
+        // for(var i=0;i<lis.length;i++){
+        //     lis[i].index = i;
+        //     lis[i].onclick=function(){
+        //         console.log(this.index);
+        //     }
+
+        // }
+
+
+        // let lis = document.getElementsByTagName("li");
+        // for(var i=0;i<lis.length;i++){
+        //     lis[i].onclick=(function(index){
+        //         return function(){
+        //         console.log(index);
+        //     }
+        //     }(i))
+
+        // }
+
+
+        
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+<script>
+    /*1.九九乘法表
+    let str = "";
+    for(let i=1;i<=9;i++){
+        for(let j=1;j<=i;j++){
+            str += i+"*"+j+"="+i*j;
+            str += "\t";
+        }
+        str += "\n";
+    }
+    console.log(str);
+    */
+
+    /*2. 1-100的和
+    let sum = 0;
+    for(let i=1;i<=100;i++){
+        sum += i;
+    }
+    console.log(sum);
+    */
+
+    /*3. 百元买百鸡
+    let cock = 0;
+    let hen = 0;
+    let chick = 0;
+    for(cock=0;cock<=20;cock++){
+        for(hen=0;hen<=100;hen++){
+            for(chick=0;chick<=100;chick++){
+                if(cock+hen+chick==100 && cock*5+hen*3+chick/3==100)
+                console.log(cock+"---"+hen+"---"+chick);
+            }
+        }
+    }
+    */
+
+    /*4. 冒泡排序
+    let a = [4,5,2,3,1];
+    let b="";
+    for(let i=0;i<a.length-1;i++){         //for(let i=1;i<=a.lenth-1;i++)
+        for(let j=0;j<a.length-1-i;j++){   //for(let j=0;j<=a.length-1-i;j++)
+             if(a[j]>a[j+1]){
+                 b = a[j];
+                 a[j] = a[j+1];
+                 a[j+1] = b;
+             }
+        }
+        console.log(a);
+    }
+    */
+
+    /* 选择排序
+    let a = [5,4,3,2,1];
+    let b;
+    let minIndex;
+    for(let i=0;i<a.length-1;i++){
+        minIndex = i;
+        for(let j=i+1;j<a.length;j++){
+            if(a[j]<a[minIndex]){
+                 minIndex = j;
+            }
+        }
+        b = a[i];
+        a[i] = a[minIndex];
+        a[minIndex] = b;
+        console.log(a);
+    }
+    */
+
+//    插入排序
+// 没有交换位置   for循环(循环次数确定)  while(循环次数不确定)
+    /*
+    let a=[5,4,3,2,1];
+    let current;
+    let preIndex;
+    for(let i=1;i<a.length;i++){
+        current = a[i];
+        preIndex = i-1;
+        while(preIndex>=0 && a[preIndex]>current){
+            a[preIndex+1] = a[preIndex];
+            preIndex--;
+         }
+         a[preIndex+1] = current;
+         console.log(a)
+    }
+    */
+
+
+
+</script>
