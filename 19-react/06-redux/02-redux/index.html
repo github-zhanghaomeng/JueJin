@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./redux.js"></script>
+</head>
+<body>
+    <script>
+        const state = {
+            count:0
+        }
+        function reducer(state=0,actions){
+            switch(actions.type){
+                case "INCREMENT":
+                    return state+actions.flag
+                case "DECREMENT":
+                    return state-actions.flag
+                default:
+                    return state
+            }
+        }
+        //定义一个 actions creator 是一个函数
+        //它返回了一个actions
+        function increment(flag){
+            return{
+                type:'INCREMENT',
+                flag
+            }
+        }
+        function decrement(flag){
+            return{
+                type:'DECREMENT',
+                flag
+            }
+        }
+        let store = Redux.createStore(reducer)
+        // console.log(store)
+        store.subscribe(()=>{
+            console.log('当前仓库的count值为:',store.getState())
+            console.log(store.getState())
+        })
+        store.dispatch(increment(2))
+        store.dispatch(decrement(2))
+    </script>
+</body>
+</html>

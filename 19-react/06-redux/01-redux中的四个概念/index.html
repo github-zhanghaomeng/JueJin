@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./redux.js"></script>
+</head>
+<body>
+    <script>
+        //仓库的数据(状态)
+        const initState = {
+            count:0
+        }
+        //管理员 是一个函数 给它传入一个老的状态和actions 
+        // 通过判断actions.type进行对数据操作
+        //管理员是一个纯函数 传入的值是一个对象initState 那么返回的也是对象
+        function reducer(state=initState,actions){
+            switch(actions.type){
+                case "INCREMENT":
+                    return {count:state.count+1}
+                case "DECREMENT":
+                    return {count:state.count-1}
+                default:
+                    return state
+            }
+        }
+        //actions只是一个动作  通过管理员进行修改状态 可以有多个动作 
+        //它是一个对象
+        const increment = {  
+            type:'INCREMENT'       
+        }
+        const decrement = {
+            type:'DECREMENT'
+        }
+        // console.log(Redux) 
+        // let store = Redux.createStore()  //会报错
+        // console.log(store) //Expected the reducer to be a function.    
+        //创建一个仓库时 必须给它传入一个'管理员'(reducer)
+        let store = Redux.createStore(reducer)
+        // console.log(store) //dispatch getState subscribe ...
+        //订阅 只要store中的状态改变时 会自动触发这个回调函数
+        store.subscribe(()=>{
+            console.log('当前仓库中的counte值为:',store.getState())
+        })
+        //派发一个actions
+        store.dispatch(increment)
+        store.dispatch(increment)
+        store.dispatch(increment)
+        store.dispatch(decrement)
+    </script>
+</body>
+</html>

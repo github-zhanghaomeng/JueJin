@@ -1,0 +1,9 @@
+安装 npm i connect-router-redux -S
+以下的history是自己写的 在导入history时不需要安装 因为在安装react-router-dom就已经把history安装过了
+使用步骤
+	一:在合并管理员时，需要把路由也合并到管理员中 调用这个中间的connectRouter 并给它传入一个history
+	二:在建立仓库时，需要使用中间件routeMiddleware)识别dispatch的方法 也给它传入一个history
+	三:在入口文件中 需要使用ConnectedRouter把组件包起来 并传给一个history 以前使用录音时，使用Router把组件包起来
+
+这个中间件 就是把路由的信息存储到仓库中 可以dispatch一个方法实现了路由的跳转 但是只能dispatch一个action,所以需要使用中间件(
+routeMiddleware)
